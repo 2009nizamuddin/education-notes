@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>এডুকেশন নোটস</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green-dark:  #1a3d2b;
+      --green-mid:   #2e6b4a;
+      --green-light: #4caf82;
+      --gold:        #c9a84c;
+      --gold-light:  #f0d080;
+      --cream:       #fdf8ee;
+      --cream-dark:  #f0e8d0;
+      --text-dark:   #1a1a1a;
+      --text-mid:    #3a3a3a;
+      --white:       #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 60%, #1e5c3a 100%);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 24px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-logo {
+      font-family: 'Amiri', serif;
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      color: var(--gold-light);
+      letter-spacing: 1px;
+      line-height: 1.2;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+      animation: fadeDown .8s ease both;
+    }
+
+    .header-sub {
+      margin-top: 10px;
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      color: rgba(255,255,255,0.8);
+      font-weight: 300;
+      letter-spacing: .5px;
+      animation: fadeDown .8s .15s ease both;
+    }
+
+    .header-divider {
+      margin: 18px auto 0;
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      animation: fadeDown .8s .25s ease both;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--green-dark);
+      border-bottom: 2px solid var(--gold);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-brand {
+      color: var(--gold-light);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 0;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      padding: 8px 0;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background .2s, color .2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--gold);
+      color: var(--green-dark);
+    }
+
+    /* ── HERO BANNER ── */
+    .hero {
+      background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
+      padding: 48px 24px 40px;
+      text-align: center;
+      border-bottom: 1px solid #ddd2b0;
+    }
+    .hero h2 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+    .hero p {
+      margin-top: 10px;
+      color: var(--text-mid);
+      font-size: 1rem;
+      max-width: 600px;
+      margin-inline: auto;
+      line-height: 1.8;
+    }
+    .hero-badge {
+      display: inline-block;
+      margin-top: 18px;
+      background: var(--gold);
+      color: var(--green-dark);
+      font-weight: 700;
+      font-size: .85rem;
+      padding: 6px 20px;
+      border-radius: 20px;
+      letter-spacing: .5px;
+    }
+
+    /* ── MAIN CONTENT ── */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    /* ── SUBJECT CARDS GRID ── */
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .subject-card {
+      background: var(--white);
+      border-radius: 14px;
+      border: 1.5px solid #e0d8c0;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(46,107,74,0.07);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      animation: fadeUp .6s ease both;
+    }
+    .subject-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 32px rgba(46,107,74,0.16);
+      border-color: var(--gold);
+    }
+
+    .card-top {
+      padding: 22px 22px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .card-info { flex: 1; }
+    .card-info h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.4;
+    }
+    .card-info p {
+      margin-top: 4px;
+      font-size: .82rem;
+      color: #777;
+      line-height: 1.5;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      padding: 12px 22px;
+      background: var(--cream);
+      border-top: 1px solid #ede5cc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: .8rem;
+      color: var(--text-mid);
+    }
+    .card-footer .coming-soon {
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .card-footer .arrow {
+      color: var(--green-mid);
+      font-size: 1rem;
+    }
+
+    /* icon colors */
+    .ic-quran   { background: #e8f5ee; }
+    .ic-hadith  { background: #eef4fb; }
+    .ic-arabic  { background: #fef9ec; }
+    .ic-bangla  { background: #fdeef4; }
+    .ic-aqaid   { background: #f2eeff; }
+    .ic-urdu    { background: #e8f7f5; }
+    .ic-english { background: #fff3e8; }
+
+    /* ── NOTICE SECTION ── */
+    .notice-box {
+      margin-top: 48px;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+      border-radius: 16px;
+      padding: 32px 28px;
+      color: white;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .notice-icon { font-size: 2rem; flex-shrink: 0; margin-top: 2px; }
+    .notice-box h3 { font-size: 1.1rem; font-weight: 700; color: var(--gold-light); margin-bottom: 8px; }
+    .notice-box p { font-size: .9rem; line-height: 1.8; color: rgba(255,255,255,0.85); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: .85rem;
+      border-top: 2px solid var(--gold);
+    }
+    footer strong { color: var(--gold-light); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* stagger cards */
+    .subject-card:nth-child(1) { animation-delay: .05s; }
+    .subject-card:nth-child(2) { animation-delay: .12s; }
+    .subject-card:nth-child(3) { animation-delay: .19s; }
+    .subject-card:nth-child(4) { animation-delay: .26s; }
+    .subject-card:nth-child(5) { animation-delay: .33s; }
+    .subject-card:nth-child(6) { animation-delay: .40s; }
+    .subject-card:nth-child(7) { animation-delay: .47s; }
+    .subject-card:nth-child(8) { animation-delay: .54s; }
+
+    @media (max-width: 600px) {
+      .nav-links a { font-size: .75rem; padding: 5px 8px; }
+      .notice-box { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="header-logo">📚 এডুকেশন নোটস</div>
+    <div class="header-sub">ইসলামিক ও সাধারণ শিক্ষার সর্বোত্তম নোটস সংগ্রহ</div>
+    <div class="header-divider"></div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">🏠 এডুকেশন নোটস</span>
+    <div class="nav-links">
+      <a href="#subjects" class="active">বিষয়সমূহ</a>
+      <a href="#notice">নোটিশ</a>
+      <a href="#">যোগাযোগ</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h2>স্বাগতম! আপনার পড়াশোনার সেরা সঙ্গী</h2>
+  <p>এখানে ইসলামিক শিক্ষা ও সাধারণ বিষয়ের গুরুত্বপূর্ণ নোটস, প্রশ্ন ও উত্তর একত্রে পাবেন। সম্পূর্ণ বিনামূল্যে।</p>
+  <span class="hero-badge">✨ সকলের জন্য উন্মুক্ত</span>
+</div>
+
+<!-- MAIN -->
+<main>
+  <div class="section-title" id="subjects">সকল বিষয়সমূহ</div>
+
+  <div class="subjects-grid">
+
+    <!-- 1. কুরআন -->
+    <a class="subject-card" href="#">
+      <div class="card-top">
+        <div class="card-icon ic-quran">🕌</div>
+        <div class="card-info">
+          <h3>পবিত্র কুরআন শরীফ</h3>
+          <p>তাফসীর, তাজবীদ, অর্থ ও বিস্তারিত নোটস</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="coming-soon">শীঘ্রই আসছে…</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 2. হাদীছ -->
+    <a class="subject-card" href="#">
+      <div class="card-top">
+        <div class="card-icon ic-hadith">📖</div>
+        <div class="card-info">
+          <h3>পবিত্র হাদীছ শরীফ</h3>
+          <p>হাদীছের মূলনীতি, গুরুত্বপূর্ণ হাদীছ ও ব্যাখ্যা</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="coming-soon">শীঘ্রই আসছে…</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 3. আরবী ১ম -->
+    <a class="subject-card" href="#">
+      <div class="card-top">
+        <div class="card-icon ic-arabic">✍️</div>
+        <div class="card-info">
+          <h3>আরবী প্রথম পত্র</h3>
+          <p>আরবী ব্যাকরণ, নাহু-ছরফ ও অনুবাদ</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="coming-soon">শীঘ্রই আসছে…</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 4. আরবী ২য় -->
+    <a class="subject-card" href="#">
+      <div class="card-top">
+        <div class="card-icon ic-arabic">🖊️</div>
+        <div class="card-info">
+          <h3>আরবী দ্বিতীয় পত্র</h3>
+          <p>আরবী সাহিত্য, রচনা ও উচ্চতর ব্যাকরণ</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="coming-soon">শীঘ্রই আসছে…</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 5. বাংলা -->
+    <a class="subject-card" href="#">
+      <div class="card-top">
+        <div class="card-icon ic-bangla">🇧🇩</div>
+        <div class="card-info">
+          <h3>বাংলা / ব্যাকরণ ও ইতিহাস</h3>
+          <p>বাংলা ভাষা, ব্যাকরণের নিয়ম ও বাংলাদেশের ইতিহাস</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="coming-soon">শীঘ্রই আসছে…</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 6. আকাঈদ ও ফিক্বহ -->
+    <a class="subject-card" href="#">
+      <div class="card-top">
+        <div class="card-icon ic-aqaid">☪️</div>
+        <div class="card-info">
+          <h3>আকাঈদ ও ফিক্বহ</h3>
+          <p>ইসলামের মূল বিশ্বাস, ইবাদত ও ফিকহি মাসায়েল</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="coming-soon">শীঘ্রই আসছে…</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 7. উর্দু ও ফার্সী -->
+    <a class="subject-card" href="#">
+      <div class="card-top">
+        <div class="card-icon ic-urdu">🌙</div>
+        <div class="card-info">
+          <h3>উর্দু ও ফার্সী</h3>
+          <p>উর্দু ও ফার্সী ভাষার ব্যাকরণ, শব্দ ও সাহিত্য</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="coming-soon">শীঘ্রই আসছে…</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 8. ইংরেজি -->
+    <a class="subject-card" href="#">
+      <div class="card-top">
+        <div class="card-icon ic-english">🔤</div>
+        <div class="card-info">
+          <h3>ইংরেজি</h3>
+          <p>English Grammar, Writing, Vocabulary ও অনুবাদ</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="coming-soon">শীঘ্রই আসছে…</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+  </div><!-- /.subjects-grid -->
+
+  <!-- NOTICE -->
+  <div class="notice-box" id="notice">
+    <div class="notice-icon">📢</div>
+    <div>
+      <h3>গুরুত্বপূর্ণ নোটিশ</h3>
+      <p>এই ওয়েবসাইটটি এখনো নির্মাণাধীন। ধীরে ধীরে সকল বিষয়ের নোটস আপলোড করা হবে। নিয়মিত ভিজিট করুন এবং আপডেট পেতে আমাদের সাথে থাকুন। আল্লাহ আমাদের সকলকে সঠিক জ্ঞান অর্জনের তৌফিক দান করুন। আমীন।</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© ২০২৫ <strong>এডুকেশন নোটস</strong> — সকল অধিকার সংরক্ষিত</p>
+  <p style="margin-top:6px;">তৈরি করা হয়েছে ❤️ দিয়ে — শিক্ষার্থীদের জন্য</p>
+</footer>
+
+</body>
+</html>
