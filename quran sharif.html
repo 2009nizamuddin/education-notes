@@ -1,237 +1,290 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>পবিত্র কুরআন শরীফ — এডুকেশন নোটস</title>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
-<style>
-:root{--gd:#1a3d2b;--gm:#2e6b4a;--gold:#c9a84c;--goldf:#f0d080;--cream:#fdf8ee;--creamd:#f0e8d0;--td:#1a1a1a;--tm:#3a3a3a;--wh:#ffffff;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Hind Siliguri',sans-serif;background:var(--cream);color:var(--td);overflow-x:hidden;}
-
-/* HEADER */
-header{background:linear-gradient(135deg,var(--gd),var(--gm));position:relative;overflow:hidden;}
-header::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
-.h-inner{max-width:960px;margin:0 auto;padding:36px 24px 32px;text-align:center;position:relative;z-index:1;}
-.h-logo{font-family:'Amiri',serif;font-size:clamp(1.8rem,5vw,3rem);color:var(--goldf);text-shadow:0 2px 12px rgba(0,0,0,.4);}
-.h-sub{margin-top:8px;font-size:clamp(.88rem,2.5vw,1.05rem);color:rgba(255,255,255,.8);font-weight:300;}
-.h-line{margin:14px auto 0;width:100px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-
-/* NAV */
-nav{background:var(--gd);border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:100;box-shadow:0 2px 14px rgba(0,0,0,.3);}
-.n-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;flex-wrap:wrap;gap:6px;}
-.n-brand{color:var(--goldf);font-weight:700;font-size:.9rem;padding:12px 0;white-space:nowrap;}
-.n-links{display:flex;gap:3px;flex-wrap:wrap;padding:7px 0;}
-.n-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.79rem;font-weight:500;padding:6px 11px;border-radius:6px;transition:background .2s,color .2s;}
-.n-links a:hover,.n-links a.on{background:var(--gold);color:var(--gd);}
-
-/* SEARCH */
-.srch-wrap{background:var(--creamd);padding:15px 24px;border-bottom:1px solid #ddd2b0;}
-.srch-box{max-width:960px;margin:0 auto;position:relative;}
-.srch-box input{width:100%;padding:11px 44px 11px 15px;border:2px solid #ccc5a8;border-radius:9px;font-family:'Hind Siliguri',sans-serif;font-size:.92rem;background:#fff;outline:none;transition:border .2s;color:var(--td);}
-.srch-box input:focus{border-color:var(--gm);}
-.srch-ic{position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none;font-size:1rem;}
-
-/* TABS */
-.tab-bar{background:var(--gd);border-bottom:3px solid var(--gold);overflow-x:auto;white-space:nowrap;padding:0 24px;}
-.tab-bar::-webkit-scrollbar{height:3px;}.tab-bar::-webkit-scrollbar-thumb{background:var(--gold);}
-.tab-inner{max-width:960px;margin:0 auto;display:inline-flex;gap:4px;padding:7px 0;}
-.tb{background:transparent;border:none;color:rgba(255,255,255,.75);font-family:'Hind Siliguri',sans-serif;font-size:.79rem;font-weight:600;padding:7px 14px;border-radius:7px;cursor:pointer;transition:background .2s,color .2s;}
-.tb:hover{background:rgba(255,255,255,.1);color:#fff;}
-.tb.on{background:var(--gold);color:var(--gd);}
-
-/* MAIN */
-.q-main{max-width:960px;margin:0 auto;padding:34px 24px 60px;}
-.q-header{background:linear-gradient(135deg,var(--gd),var(--gm));border-radius:13px;padding:24px 26px;color:#fff;display:flex;gap:16px;align-items:center;margin-bottom:22px;}
-.q-hic{font-size:2.2rem;flex-shrink:0;}
-.q-header h2{font-size:1.3rem;font-weight:700;color:var(--goldf);}
-.q-header p{font-size:.85rem;color:rgba(255,255,255,.8);margin-top:4px;line-height:1.6;}
-.q-count{background:var(--wh);border:1.5px solid #e0d8c0;border-radius:8px;padding:9px 16px;margin-bottom:18px;font-size:.85rem;color:var(--tm);}
-.q-count strong{color:var(--gd);}
-.no-res{text-align:center;padding:36px;color:#999;display:none;font-size:.95rem;}
-
-/* NOTE CARDS */
-.nc{background:var(--wh);border:1.5px solid #e0d8c0;border-radius:11px;margin-bottom:16px;overflow:hidden;box-shadow:0 2px 7px rgba(0,0,0,.05);}
-.nc-head{background:var(--creamd);padding:13px 17px;display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none;transition:background .2s;}
-.nc-head:hover{background:#e8dfc8;}
-.nc-num{background:var(--gd);color:var(--goldf);min-width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;}
-.nc-head h3{font-size:.95rem;font-weight:700;color:var(--gd);flex:1;line-height:1.4;}
-.nc-tog{color:var(--gm);font-size:.95rem;transition:transform .3s;flex-shrink:0;}
-.nc-tog.op{transform:rotate(180deg);}
-.nc-body{max-height:0;overflow:hidden;transition:max-height .45s ease,padding .3s;}
-.nc-body.op{max-height:2000px;padding:16px 17px;}
-.ar-txt{font-family:'Amiri',serif;font-size:1.3rem;direction:rtl;text-align:right;color:var(--gd);background:var(--cream);border:1px solid #ddd2b0;border-radius:7px;padding:13px 16px;margin-bottom:12px;line-height:2.3;}
-.sr-ref{display:inline-block;background:var(--gold);color:var(--gd);font-size:.77rem;font-weight:700;padding:3px 11px;border-radius:20px;margin-bottom:10px;}
-.bn-txt{font-size:.92rem;line-height:2.05;color:var(--tm);background:#f9f6ef;border-left:3px solid var(--gm);padding:12px 15px;border-radius:0 7px 7px 0;}
-
-/* FOOTER */
-footer{background:var(--gd);color:rgba(255,255,255,.7);text-align:center;padding:24px;font-size:.82rem;border-top:2px solid var(--gold);}
-footer strong{color:var(--goldf);}
-
-@media(max-width:580px){
-  .n-links a{font-size:.72rem;padding:5px 8px;}
-  .q-header{flex-direction:column;text-align:center;}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>পবিত্র কুরআন শরীফ — এডুকেশন নোটস</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green-dark:  #1a3d2b;
+      --green-mid:   #2e6b4a;
+      --gold:        #c9a84c;
+      --gold-light:  #f0d080;
+      --cream:       #fdf8ee;
+      --cream-dark:  #f0e8d0;
+      --text-dark:   #1a1a1a;
+      --white:       #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+      padding: 40px 24px;
+      text-align: center;
+      position: relative;
+    }
+    .header-logo {
+      font-family: 'Amiri', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--gold-light);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    nav {
+      background: var(--green-dark);
+      border-bottom: 2px solid var(--gold);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 10px 24px;
+    }
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand { color: var(--gold-light); font-weight: 700; }
+    .search-wrap { background: var(--cream-dark); padding: 20px; border-bottom: 1px solid #ddd2b0; }
+    .search-box { max-width: 600px; margin: 0 auto; position: relative; }
+    .search-box input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      outline: none;
+    }
+    main { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+    .note-card {
+      background: var(--white);
+      border: 1.5px solid #e0d8c0;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .card-head {
+      background: var(--cream-dark);
+      padding: 15px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-head h3 { font-size: 1.1rem; color: var(--green-dark); }
+    .card-body { padding: 20px; display: none; }
+    .card-body.active { display: block; }
+    .arabic-text {
+      font-family: 'Amiri', serif;
+      font-size: 1.6rem;
+      direction: rtl;
+      text-align: right;
+      color: var(--green-dark);
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      line-height: 2.2;
+      margin-bottom: 15px;
+    }
+    .bangla-text { line-height: 1.8; text-align: justify; }
+    .ref-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-dark);
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+    footer {
+      background: var(--green-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 30px;
+      margin-top: 50px;
+      border-top: 3px solid var(--gold);
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <div class="h-inner">
-    <div class="h-logo">📖 পবিত্র কুরআন শরীফ</div>
-    <div class="h-sub">শানে নুযূল — পবিত্র আয়াত শরীফ উনাদের অবতরণের বরকতময় প্রেক্ষাপট</div>
-    <div class="h-line"></div>
-  </div>
+  <div class="header-logo">📖 পবিত্র কুরআন শরীফ</div>
+  <p style="color:white; margin-top:10px;">শানে নুযূল — এডুকেশন নোটস</p>
 </header>
 
 <nav>
-  <div class="n-inner">
-    <span class="n-brand">📚 এডুকেশন নোটস</span>
-    <div class="n-links">
-      <a href="index.html">🏠 হোম</a>
-      <a href="quran-sharif.html" class="on">কুরআন শরীফ</a>
-    </div>
+  <div class="nav-inner">
+    <span class="nav-brand">এডুকেশন নোটস</span>
+    <a href="index.html" style="color:white; text-decoration:none;">🏠 হোম</a>
   </div>
 </nav>
 
-<div class="srch-wrap">
-  <div class="srch-box">
-    <input type="text" id="srch" placeholder="আয়াত নম্বর বা বিষয় লিখুন... যেমন: উহুদ, খন্দক, কিবলা, আয়াত ২৬" oninput="doFilter()"/>
-    <span class="srch-ic">🔍</span>
+<div class="search-wrap">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="আয়াত বা বিষয় দিয়ে খুঁজুন..." onkeyup="searchNotes()">
   </div>
 </div>
 
-<div class="tab-bar">
-  <div class="tab-inner">
-    <button class="tb on" onclick="doTab('all',this)">সকল আয়াত</button>
-    <button class="tb" onclick="doTab('baqara',this)">সূরা বাক্বারা</button>
-    <button class="tb" onclick="doTab('imran',this)">সূরা আল ইমরান</button>
-  </div>
-</div>
+<main id="notesContainer">
 
-<div class="q-main">
-
-  <div class="q-header">
-    <div class="q-hic">📖</div>
-    <div>
-      <h2>পবিত্র কুরআন শরীফ — শানে নুযূল</h2>
-      <p>পবিত্র আয়াত শরীফ উনাদের অবতরণের বরকতময় প্রেক্ষাপট ও ব্যাখ্যা। মহান আল্লাহ পাক তিনি এবং উনার হাবীব নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনাদের শান মুবারকে সর্বোচ্চ আদব ও তা'যীম সহকারে পাঠ করুন।</p>
+  <div class="note-card" data-search="আল ইমরান ২৬ খন্দক পাথর রোম পারস্য ইয়েমেন">
+    <div class="card-head" onclick="toggleNote(this)">
+      <h3>১. সূরা আল ইমরান শরীফ — আয়াত শরীফ ২৬</h3>
+      <span>▼</span>
+    </div>
+    <div class="card-body">
+      <span class="ref-badge">সূরা আল ইমরান ﴿٢٦﴾</span>
+      <div class="arabic-text">قُلِ اللَّهُمَّ مَالِكَ الْمُلْكِ تُؤْتِي الْمُلْكَ مَن تَشَاءُ وَتَنزِعُ الْمُلْكَ مِمَّن تَشَاءُ وَتُعِزُّ মَن تَشَاءُ وَتُذِلُّ مَن تَشَاءُ بِيَدِكَ الْخَيْرُ إِنَّكَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ</div>
+      <div class="bangla-text">
+        <strong>শানে নুযূল:</strong> ৫ম হিজরীতে খন্দকের যুদ্ধে পরিখা খননের সময় বিরাট আকৃতির একটি পাথর ভাঙতে যে তিনবার আলোক রশ্মি বের হয়েছিল তার মধ্যে নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনাকে রোম, পারস্য ও ইয়েমেনের রাজ প্রাসাদ দেখানো হয়েছিল। এবং হযরত জিবরাঈল আলাইহিস সালাম উনার মাধ্যমে সংবাদ দেওয়া হয়েছিল যে, মুসলমানগণ উনারা এগুলো বিজয় করবেন। মুনাফিক ও কাফিররা বিদ্রূপ করলে মহান আল্লাহ পাক তিনি উনার এই বিদ্রূপ ও অসত্যতা খণ্ডনের পরিপ্রেক্ষিতে উক্ত আয়াত শরীফ খানা নাযিল করেন।
+      </div>
     </div>
   </div>
 
-  <div class="q-count">📊 মোট <strong id="vcnt">৯</strong>টি আয়াতের শানে নুযূল পাওয়া যাচ্ছে</div>
-  <div class="no-res" id="nores">😔 কোনো ফলাফল পাওয়া যায়নি। অন্য শব্দ দিয়ে খুঁজুন।</div>
-
-  <div id="notes-container">
-    <div class="nc" data-s="baqara" data-k="বাক্বারা ১৯ মুনাফিক বৃষ্টি বজ্র বিদ্যুৎ ইসলাম মদীনা">
-      <div class="nc-head" onclick="tog(this)">
-        <div class="nc-num">১</div>
-        <h3>সূরা বাক্বারা — আয়াত ১৯</h3>
-        <span class="nc-tog">▼</span>
-      </div>
-      <div class="nc-body">
-        <span class="sr-ref">সূরা বাক্বারা ﴿١٩﴾</span>
-        <div class="ar-txt">أَوْ كَصَيِّبٍ مِّنَ السَّمَاءِ فِيهِ ظُلُمَاتٌ وَرَعْدٌ وَبَرْقٌ يَجْعَلُونَ أَصَابِعَهُمْ فِي آذَانِهِم مِّনَ الصَّوَاعِقِ حَذَرَ الْمَوْتِ ۚ وَاللَّهُ مُحِيطٌ بِالْكَافِرِينَ</div>
-        <div class="bn-txt"><strong>শানে নুযূল:</strong> পবিত্র মদীনা শরীফের দুজন মুনাফিক নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার দরবার শরীফ থেকে সম্মানিত দীন ইসলাম ত্যাগ করে পালিয়ে যাচ্ছিল। পথিমধ্যে ঘোর অন্ধকারে বৃষ্টি বর্ষণ শুরু হল, সাথে বজ্রধ্বনি ও বিদ্যুৎ চমক। বজ্রপাতের শব্দে মৃত্যুর ভয়ে তারা নিজেদের কানের ভেতর আঙুল ঢুকিয়ে দিল। এর প্রেক্ষিতে মহান আল্লাহ পাক তিনি এই পবিত্র আয়াত শরীফ নাযিল করেন।</div>
+  <div class="note-card" data-search="আল ইমরান ৩১ মুহব্বত অনুসরণ">
+    <div class="card-head" onclick="toggleNote(this)">
+      <h3>২. সূরা আল ইমরান শরীফ — আয়াত শরীফ ৩১</h3>
+      <span>▼</span>
+    </div>
+    <div class="card-body">
+      <span class="ref-badge">সূরা আল ইমরান ﴿٣١﴾</span>
+      <div class="arabic-text">قُلْ إِن كُنتُمْ تُحِبُّونَ اللَّهَ فَاتَّبِعُونِي يُحْبِبْكُمُ اللَّهُ وَيَغْفِرْ لَكُمْ ذُنُوبَكُمْ وَاللَّهُ غَفُورٌ رَّحِيمٌ</div>
+      <div class="bangla-text">
+        <strong>শানে নুযূল:</strong> যখন নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম তিনি ইরশাদ মুবারক করলেন যে, এক মহান আল্লাহ পাক উনাকে মানবে সে জান্নাতে প্রবেশ করবে, তখন ইহুদী বা খ্রিষ্টানরা এসে নিজেদের মুহব্বতের দাবি করল। তখন মহান আল্লাহ পাক তিনি উনার পক্ষ থেকে এই আয়াত শরীফ খানা নাযিল হয় যে, মহান আল্লাহ পাক উনার মুহব্বত পেতে হলে নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনাকে অনুসরণ করতে হবে।
       </div>
     </div>
+  </div>
 
-    <div class="nc" data-s="baqara" data-k="বাক্বারা ৪৪ ইহুদী দান আদেশ ঈমান কিতাব দ্বিমুখী">
-      <div class="nc-head" onclick="tog(this)">
-        <div class="nc-num">২</div>
-        <h3>সূরা বাক্বারা — আয়াত ৪৪</h3>
-        <span class="nc-tog">▼</span>
-      </div>
-      <div class="nc-body">
-        <span class="sr-ref">সূরা বাক্বারা ﴿٤٤﴾</span>
-        <div class="ar-txt">أَتَأْمُرُونَ النَّاسَ بِالْبِرِّ وَتَنسَوْনَ أَنফُسَكُمْ وَأَنتُمْ تَتْلُونَ الْكِتَابَ ۚ أَفَلَا তেমূতুন্ন ইল্লা ওয়া আন্তুম মুসলিমুন</div>
-        <div class="bn-txt"><strong>শানে নুযূল:</strong> ইহুদীরা মানুষকে দান-খয়রাত করার আদেশ করত; কিন্তু নিজেরা এ কাজ করত না। তাদের এই দ্বিমুখী আচরণের প্রেক্ষিতে মহান আল্লাহ পাক তিনি এই পবিত্র আয়াত শরীফ নাযিল করেন।</div>
+  <div class="note-card" data-search="আল ইমরান ১২৮ উহুদ দাঁত রক্ত">
+    <div class="card-head" onclick="toggleNote(this)">
+      <h3>৩. সূরা আল ইমরান শরীফ — আয়াত শরীফ ১২৮</h3>
+      <span>▼</span>
+    </div>
+    <div class="card-body">
+      <span class="ref-badge">সূরা আল ইমরান ﴿١٢٨﴾</span>
+      <div class="arabic-text">لَيْسَ لَكَ مِنَ الْأَمْرِ شَيْءٌ أَوْ يَتُوبَ عَلَيْهِمْ أَوْ يُعَذِّبَهُمْ فَإِنَّهُمْ ظَالِمُونَ</div>
+      <div class="bangla-text">
+        <strong>শানে নুযূল:</strong> পবিত্র উহুদের যুদ্ধের দিন নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার নূরুল্লাহ মুবারক অর্থাৎ মহাসম্মানিত ও মহাপবিত্র দাঁত মুবারক শহীদ হয় এবং মুখ মুবারক দিয়ে নূরুন নাজাত মুবারক অর্থাৎ রক্ত মুবারক ঝরতে থাকে। তখন নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম তিনি উনার নূরুন নাজাত মুবারক মুছতে মুছতে দুঃখ প্রকাশ করলে মহান আল্লাহ পাক তিনি উনার পক্ষ থেকে এই আয়াত শরীফ খানা নাযিল করেন।
       </div>
     </div>
+  </div>
 
-    <div class="nc" data-s="baqara" data-k="বাক্বারা ১২০ ইহুদী খ্রিস্টান মিল্লাত ষড়যন্ত্র বন্ধু হিদায়েত">
-      <div class="nc-head" onclick="tog(this)">
-        <div class="nc-num">৩</div>
-        <h3>সূরা বাক্বারা — আয়াত ১২০</h3>
-        <span class="nc-tog">▼</span>
-      </div>
-      <div class="nc-body">
-        <span class="sr-ref">সূরা বাক্বারা ﴿١٢٠﴾</span>
-        <div class="ar-txt">وَلَن تَرْضَىٰ عَنكَ الْيَهُودُ وَلَا النَّصَارَىٰ حَتَّىٰ تَتَّبِعَ مِلَّتَهُمْ ۗ قُلْ إِنَّ هُدَى اللَّهِ هُوَ الْهُدَىٰ</div>
-        <div class="bn-txt"><strong>শানে নুযূল:</strong> ইয়াহুদী ও খ্রিস্টানরা সম্মানিত দীন ইসলামের প্রতি চরম বিদ্বেষ পোষণ করত। তাদের ষড়যন্ত্রমূলক মনোভাব জানানোর জন্য মহান আল্লাহ পাক তিনি এই পবিত্র আয়াত শরীফ নাযিল করেন।</div>
+  <div class="note-card" data-search="আল ইমরান ১৫১ উহুদ ভয় ভীতি">
+    <div class="card-head" onclick="toggleNote(this)">
+      <h3>৪. সূরা আল ইমরান শরীফ — আয়াত শরীফ ১৫১</h3>
+      <span>▼</span>
+    </div>
+    <div class="card-body">
+      <span class="ref-badge">সূরা আল ইমরান ﴿١٥١﴾</span>
+      <div class="arabic-text">سَنُلْقِي فِي قُلُوبِ الَّذِينَ كَفَرُوا الرُّعْبَ بِمَا أَشْرَكُوا بِاللَّهِ مَا لَمْ يُنَزِّلْ بِهِ سُلْطَانًا وَمَأْوَاهُمُ النَّارُ وَبِئْسَ مَثْوَى الظَّالِمِينَ</div>
+      <div class="bangla-text">
+        <strong>শানে নুযূল:</strong> উহুদ জিহাদে কাফেররা মক্কার দিকে পালিয়ে যাওয়ার পর পুনরায় আক্রমণ করতে চাইলে মহান আল্লাহ পাক তিনি উনার পক্ষ থেকে তাদের মনে মুসলমানদের প্রতি ভীতির সঞ্চার করে দেন। ফলে তারা অগ্রসর হওয়ার সাহস হারিয়ে ফেলে এবং মহান আল্লাহ পাক তিনি উনার এই আয়াত শরীফ খানা নাযিল করেন।
       </div>
     </div>
+  </div>
 
-    <div class="nc" data-s="baqara" data-k="বাক্বারা ১৪৪ কিবলা বায়তুল মুকাদ্দাস কাবা মক্কা হিজরত নামায ষোল সতের মাস">
-      <div class="nc-head" onclick="tog(this)">
-        <div class="nc-num">৪</div>
-        <h3>সূরা বাক্বারা — আয়াত ১৪৪</h3>
-        <span class="nc-tog">▼</span>
-      </div>
-      <div class="nc-body">
-        <span class="sr-ref">সূরা বাক্বারা ﴿١٤٤﴾</span>
-        <div class="ar-txt">قَدْ نَرَىٰ تَقَلُّবَ وَجْهِكَ فِي السَّمَاءِ ۖ فَلَنُوَلِّيَنَّكَ قِبْلَةً تَرْضَاهَا ۚ فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَামِ</div>
-        <div class="bn-txt"><strong>শানে নুযূল:</strong> হিজরত মুবারকের পর প্রায় ১৬ বা ১৭ মাস পবিত্র বায়তুল মুকাদ্দাস শরীফের দিকে মুখ করে নামায আদায় করা হত। কিন্তু হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার পছন্দনীয় কিবলা ছিল পবিত্র কাবা শরীফ। এর ফলশ্রুতিতে মহান আল্লাহ পাক কিবলা পরিবর্তন করে এই পবিত্র আয়াত শরীফ নাযিল করেন।</div>
+  <div class="note-card" data-search="আল ইমরান ১০২ আউস খাযরাজ ঐক্য">
+    <div class="card-head" onclick="toggleNote(this)">
+      <h3>৫. সূরা আল ইমরান শরীফ — আয়াত শরীফ ১০২</h3>
+      <span>▼</span>
+    </div>
+    <div class="card-body">
+      <span class="ref-badge">সূরা আল ইমরান ﴿١٠٢﴾</span>
+      <div class="arabic-text">يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ حَقَّ تُقَاتِهِ وَلَا تَمُوتُنَّ إِلَّا وَأَنتُمْ مُسْلِمُونَ</div>
+      <div class="bangla-text">
+        <strong>শানে নুযূল:</strong> পবিত্র মদীনা শরীফের আউস ও খাযরাজ গোত্রদ্বয়ের বিবাদ মিটে ভ্রাতৃত্ব তৈরি হওয়ার পর জনৈক ইহুদী পুনরায় বিবাদ সৃষ্টির চেষ্টা চালায়। তখন নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার নুরুত তাশরীফ মুবারক অর্থাৎ উপস্থিতির মাধ্যমে উনাদের শান্ত ও ঐক্যবদ্ধ করেন এবং মহান আল্লাহ পাক তিনি উনার এই আয়াত শরীফ খানা নাযিল করেন।
       </div>
     </div>
+  </div>
 
-    <div class="nc" data-s="imran" data-k="ইমরান ২৬ খন্দক যুদ্ধ রোম পারস্য পাথর জিব্রাঈল মুনাফিক ফারুক বিজয়">
-      <div class="nc-head" onclick="tog(this)">
-        <div class="nc-num">৫</div>
-        <h3>সূরা আল ইমরান — আয়াত ২৬</h3>
-        <span class="nc-tog">▼</span>
-      </div>
-      <div class="nc-body">
-        <span class="sr-ref">সূরা আল ইমরান ﴿٢٦﴾</span>
-        <div class="ar-txt">قُلِ اللَّهُمَّ مَالِكَ الْمُلْكِ تُؤْتِي الْمُلْكَ مَنْ تَشَاءُ وَতাজিনুল মুলকা মিম্মান তাশা...</div>
-        <div class="bn-txt"><strong>শানে নুযূল:</strong> ৫ম হিজরীতে খন্দকের যুদ্ধে পরিখা খননের সময় নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনাকে রোম ও পারস্যের বিজয় দেখানো হয়েছিল। মুনাফিকদের বিদ্রূপ খণ্ডনের প্রেক্ষিতে মহান আল্লাহ পাক এই আয়াত নাযিল করেন।</div>
+  <div class="note-card" data-search="বাক্বারা ১৯ মুনাফিক বৃষ্টি বজ্র">
+    <div class="card-head" onclick="toggleNote(this)">
+      <h3>৬. সূরা বাক্বারা শরীফ — আয়াত শরীফ ১৯</h3>
+      <span>▼</span>
+    </div>
+    <div class="card-body">
+      <span class="ref-badge">সূরা বাক্বারা ﴿١٩﴾</span>
+      <div class="arabic-text">أَوْ كَصَيِّبٍ مِّنَ السَّمَاءِ فِيهِ ظُلُمَاتٌ وَرَعْدٌ وَبَرْقٌ يَجْعَلُونَ أَصَابِعَهُمْ فِي آذَانِهِم مِّنَ الصَّوَاعِقِ حَذَرَ الْمَوْتِ وَاللَّهُ مُحِيطٌ بِالْكَافِرِينَ</div>
+      <div class="bangla-text">
+        <strong>শানে নুযূল:</strong> মদীনা শরীফের দু'জন মুনাফিক নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার দরবার শরীফ থেকে পালিয়ে যাওয়ার সময় ঝড়ের কবলে পড়ে। বজ্রপাতের শব্দে তারা কানে আঙুল দেয়। পরে তারা পুনরায় দ্বীন ইসলাম গ্রহণ করার সংকল্প করলে মহান আল্লাহ পাক তিনি উনার পক্ষ থেকে এই আয়াত শরীফ খানা নাযিল হয়।
       </div>
     </div>
+  </div>
 
+  <div class="note-card" data-search="বাক্বারা ৪৪ ইহুদী দান">
+    <div class="card-head" onclick="toggleNote(this)">
+      <h3>৭. সূরা বাক্বারা শরীফ — আয়াত শরীফ ৪৪</h3>
+      <span>▼</span>
     </div>
+    <div class="card-body">
+      <span class="ref-badge">সূরা বাক্বারা ﴿٤٤﴾</span>
+      <div class="arabic-text">أَتَأْمُرُونَ النَّاسَ بِالْبِرِّ وَتَنسَوْنَ أَنفُسَكُمْ وَأَنتُمْ تَتْلُونَ الْكِتَابَ أَفَلَا تَعْقِلُونَ</div>
+      <div class="bangla-text">
+        <strong>শানে নুযূল:</strong> ইহুদীরা অন্যকে দান করতে বললেও নিজেরা করত না এবং আত্মীয়দের দ্বীন ইসলামে বহাল থাকতে বললেও নিজেরা ঈমান আনত না। তাদের এই দ্বিমুখী আচরণের ফলে মহান আল্লাহ পাক তিনি উনার এই আয়াত শরীফ খানা নাযিল করেন।
+      </div>
+    </div>
+  </div>
 
-</div>
+  <div class="note-card" data-search="বাক্বারা ১২০ ইহুদী খ্রিষ্টান মিল্লাত">
+    <div class="card-head" onclick="toggleNote(this)">
+      <h3>৮. সূরা বাক্বারা শরীফ — আয়াত শরীফ ১২০</h3>
+      <span>▼</span>
+    </div>
+    <div class="card-body">
+      <span class="ref-badge">সূরা বাক্বারা ﴿١٢٠﴾</span>
+      <div class="arabic-text">وَلَن تَرْضَى عَنكَ الْيَهُودُ وَلَا النَّصَارَى حَتَّى تَتَّبِعَ মِلَّتَهُمْ قُلْ إِنَّ هُدَى اللَّهِ هُوَ الْهُدَى وَلَئِنِ اتَّبَعْتَ أَهْوَاءَهُم بَعْدَ الَّذِي جَاءَكَ مِنَ الْعِلْمِ مَا لَكَ مِنَ اللَّهِ مِن وَلِي وَلَا نَصِيرٍ</div>
+      <div class="bangla-text">
+        <strong>শানে নুযূল:</strong> ইয়াহুদী ও খ্রিষ্টানরা দাবি করত যে মুসলমানরা তাদের ধর্ম গ্রহণ করলে তবেই তারা সন্তুষ্ট হবে। তাদের এই ষড়যন্ত্রমূলক মনোভাব ও তারা যে প্রকৃত বন্ধু নয়, তা জানাতে মহান আল্লাহ পাক তিনি উনার এই আয়াত শরীফ খানা নাযিল করেন।
+      </div>
+    </div>
+  </div>
+
+  <div class="note-card" data-search="বাক্বারা ১৪৪ কিবলা কাবা">
+    <div class="card-head" onclick="toggleNote(this)">
+      <h3>৯. সূরা বাক্বারা শরীফ — আয়াত শরীফ ১৪৪</h3>
+      <span>▼</span>
+    </div>
+    <div class="card-body">
+      <span class="ref-badge">সূরা বাক্বারা ﴿١٤٤﴾</span>
+      <div class="arabic-text">قَدْ نَرَى تَقَلُّبَ وَجْهِكَ فِي السَّمَاءِ فَلَنُوَلِّيَنَّكَ قِبْلَةً تَرْضَاهَا فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ وَحَيْثُ مَا كُنتُمْ فَوَلُّوا وُجُوهَكُمْ شَطْرَهُ وَإِنَّ الَّذِينَ أُوتُوا الْكِتَابَ لَيَعْلَمُونَ أَنَّهُ الْحَقُّ مِن رَّبِّهِمْ وَمَا اللَّهُ بِغَافِلٍ عَمَّا يَعْمَلُونَ</div>
+      <div class="bangla-text">
+        <strong>শানে নুযূল:</strong> নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম তিনি পছন্দনীয় কিবলা পবিত্র কাবা শরীফ উনার জন্য আকাশের দিকে মুখ মুবারক ফিরাতেন। মহান আল্লাহ পাক তিনি উনার নির্দেশ মুবারকে ১৬/১৭ মাস বায়তুল মুকাদ্দাস উনার দিকে নামায পড়ার পর মহান আল্লাহ পাক তিনি উনার হাবীব ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার সন্তুষ্টির জন্য কিবলা পরিবর্তন করে এই আয়াত শরীফ খানা নাযিল করেন।
+      </div>
+    </div>
+  </div>
+
+</main>
 
 <footer>
   <p>© ২০২৬ <strong>এডুকেশন নোটস</strong> — সকল অধিকার সংরক্ষিত</p>
 </footer>
 
 <script>
-// সার্চ ফিল্টার
-function doFilter() {
-  const q = document.getElementById('srch').value.toLowerCase();
-  const cards = document.querySelectorAll('.nc');
-  let count = 0;
-  cards.forEach(c => {
-    const txt = c.getAttribute('data-k').toLowerCase() + c.innerText.toLowerCase();
-    if(txt.includes(q)) { c.style.display = 'block'; count++; }
-    else { c.style.display = 'none'; }
-  });
-  document.getElementById('vcnt').innerText = count;
-  document.getElementById('nores').style.display = count === 0 ? 'block' : 'none';
-}
+  function toggleNote(element) {
+    const body = element.nextElementSibling;
+    body.classList.toggle('active');
+  }
 
-// ট্যাব ফিল্টার
-function doTab(s, btn) {
-  document.querySelectorAll('.tb').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  const cards = document.querySelectorAll('.nc');
-  let count = 0;
-  cards.forEach(c => {
-    if(s === 'all' || c.getAttribute('data-s') === s) { c.style.display = 'block'; count++; }
-    else { c.style.display = 'none'; }
-  });
-  document.getElementById('vcnt').innerText = count;
-}
-
-// একর্ডিয়ন টগল
-function tog(h) {
-  const b = h.nextElementSibling;
-  const t = h.querySelector('.nc-tog');
-  b.classList.toggle('op');
-  t.classList.toggle('op');
-}
+  function searchNotes() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let cards = document.getElementsByClassName('note-card');
+    for (let i = 0; i < cards.length; i++) {
+      let content = cards[i].getAttribute('data-search');
+      if (content.includes(input)) {
+        cards[i].style.display = "";
+      } else {
+        cards[i].style.display = "none";
+      }
+    }
+  }
 </script>
 
 </body>
