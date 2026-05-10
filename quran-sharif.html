@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>পবিত্র কুরআন শরীফ — এডুকেশন নোটস</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--gd:#1a3d2b;--gm:#2e6b4a;--gold:#c9a84c;--goldf:#f0d080;--cream:#fdf8ee;--creamd:#f0e8d0;--td:#1a1a1a;--tm:#3a3a3a;--wh:#fff;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Hind Siliguri',sans-serif;background:var(--cream);color:var(--td);overflow-x:hidden;}
+
+header{background:linear-gradient(135deg,var(--gd),var(--gm));position:relative;overflow:hidden;}
+header::before{content:'';position:absolute;inset:0;opacity:.04;background:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%) 0 0/20px 20px;pointer-events:none;}
+.h-inner{max-width:980px;margin:0 auto;padding:32px 24px 28px;text-align:center;position:relative;z-index:1;}
+.h-logo{font-family:'Amiri',serif;font-size:clamp(1.7rem,5vw,2.8rem);color:var(--goldf);text-shadow:0 2px 12px rgba(0,0,0,.4);}
+.h-sub{margin-top:7px;font-size:clamp(.82rem,2.5vw,.98rem);color:rgba(255,255,255,.78);font-weight:300;}
+.h-line{margin:12px auto 0;width:90px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+
+nav{background:var(--gd);border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:200;box-shadow:0 2px 14px rgba(0,0,0,.3);}
+.n-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;flex-wrap:wrap;gap:6px;}
+.n-brand{color:var(--goldf);font-weight:700;font-size:.88rem;padding:11px 0;white-space:nowrap;}
+.n-links{display:flex;gap:3px;flex-wrap:wrap;padding:6px 0;}
+.n-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.78rem;font-weight:500;padding:6px 10px;border-radius:6px;transition:background .2s,color .2s;}
+.n-links a:hover,.n-links a.on{background:var(--gold);color:var(--gd);}
+
+/* মেইন ট্যাব */
+.sec-tabs{background:var(--gd);border-bottom:3px solid var(--gold);}
+.sec-tabs-inner{max-width:980px;margin:0 auto;display:flex;overflow-x:auto;}
+.sec-tabs-inner::-webkit-scrollbar{height:3px;}.sec-tabs-inner::-webkit-scrollbar-thumb{background:var(--gold);}
+.stab{background:transparent;border:none;border-bottom:3px solid transparent;margin-bottom:-3px;color:rgba(255,255,255,.65);font-family:'Hind Siliguri',sans-serif;font-size:.85rem;font-weight:600;padding:14px 20px;cursor:pointer;white-space:nowrap;transition:all .2s;display:flex;align-items:center;gap:7px;}
+.stab:hover{color:#fff;background:rgba(255,255,255,.07);}
+.stab.on{color:var(--goldf);border-bottom-color:var(--gold);background:rgba(255,255,255,.05);}
+
+/* সেকশন */
+.sec{display:none;}.sec.on{display:block;}
+
+/* সার্চ */
+.srch-wrap{background:var(--creamd);padding:12px 24px;border-bottom:1px solid #ddd2b0;}
+.srch-box{max-width:980px;margin:0 auto;position:relative;}
+.srch-box input{width:100%;padding:10px 42px 10px 14px;border:2px solid #ccc5a8;border-radius:9px;font-family:'Hind Siliguri',sans-serif;font-size:.88rem;background:#fff;outline:none;transition:border .2s;color:var(--td);}
+.srch-box input:focus{border-color:var(--gm);}
+.srch-ic{position:absolute;right:13px;top:50%;transform:translateY(-50%);pointer-events:none;}
+
+/* সাব ট্যাব */
+.sub-bar{background:#fff;border-bottom:1px solid #e0d8c0;padding:8px 24px;}
+.sub-bar-inner{max-width:980px;margin:0 auto;display:flex;gap:5px;flex-wrap:wrap;}
+.sb{background:transparent;border:1.5px solid #ccc5a8;color:#666;font-family:'Hind Siliguri',sans-serif;font-size:.75rem;font-weight:600;padding:5px 13px;border-radius:20px;cursor:pointer;transition:all .2s;}
+.sb:hover{border-color:var(--gm);color:var(--gm);}
+.sb.on{background:var(--gm);border-color:var(--gm);color:#fff;}
+
+/* মেইন */
+.q-main{max-width:980px;margin:0 auto;padding:24px 24px 48px;}
+.res-count{background:var(--wh);border:1.5px solid #e0d8c0;border-radius:8px;padding:7px 14px;margin-bottom:14px;font-size:.82rem;color:var(--tm);}
+.res-count strong{color:var(--gd);}
+.no-res{text-align:center;padding:36px;color:#aaa;display:none;font-size:.9rem;}
+
+/* নোট কার্ড — প্রশ্নোত্তর */
+.nc{background:var(--wh);border:1.5px solid #e0d8c0;border-radius:11px;margin-bottom:13px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.05);}
+.nc-head{padding:12px 16px;display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none;transition:background .2s;}
+.nc-num{min-width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.76rem;font-weight:700;flex-shrink:0;}
+.nc-head h3{font-size:.92rem;font-weight:700;flex:1;line-height:1.4;}
+.nc-tog{font-size:.88rem;transition:transform .3s;flex-shrink:0;}
+.nc-tog.op{transform:rotate(180deg);}
+.nc-body{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;}
+.nc-body.op{max-height:4000px;padding:14px 16px;}
+
+/* রঙ থিম — প্রশ্নোত্তর (নীল) */
+.qa .nc-head{background:#eef4fb;}
+.qa .nc-head:hover{background:#dceaf7;}
+.qa .nc-num{background:#1a4a7a;color:#b8d4f0;}
+.qa .nc-head h3{color:#1a4a7a;}
+.qa .nc-tog{color:#3a7ab5;}
+.q-lbl{font-size:.71rem;font-weight:700;color:#3a7ab5;background:#dceaf7;display:inline-block;padding:2px 9px;border-radius:10px;margin-bottom:6px;}
+.a-lbl{font-size:.71rem;font-weight:700;color:var(--gm);background:#dff0e8;display:inline-block;padding:2px 9px;border-radius:10px;margin-bottom:6px;margin-top:10px;}
+.q-box{background:#f0f6ff;border-left:3px solid #3a7ab5;padding:10px 14px;border-radius:0 7px 7px 0;font-size:.89rem;font-weight:600;color:#1a3560;line-height:1.8;margin-bottom:4px;}
+.a-box{background:#f9f6ef;border-left:3px solid var(--gm);padding:10px 14px;border-radius:0 7px 7px 0;font-size:.87rem;line-height:1.95;color:var(--tm);}
+.a-box .ar{font-family:'Amiri',serif;font-size:1.15rem;direction:rtl;text-align:right;display:block;margin:8px 0;color:var(--gd);background:var(--cream);padding:8px 12px;border-radius:6px;line-height:2.2;}
+
+/* রঙ থিম — শানে নুযূল (সবুজ) */
+.sn .nc-head{background:var(--creamd);}
+.sn .nc-head:hover{background:#e5dac5;}
+.sn .nc-num{background:var(--gd);color:var(--goldf);}
+.sn .nc-head h3{color:var(--gd);}
+.sn .nc-tog{color:var(--gm);}
+.sr-ref{display:inline-block;background:var(--gold);color:var(--gd);font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:9px;}
+.ar-txt{font-family:'Amiri',serif;font-size:1.28rem;direction:rtl;text-align:right;color:var(--gd);background:var(--cream);border:1px solid #ddd2b0;border-radius:7px;padding:12px 15px;margin-bottom:11px;line-height:2.3;}
+.bn-txt{font-size:.88rem;line-height:2;color:var(--tm);background:#f9f6ef;border-left:3px solid var(--gm);padding:11px 14px;border-radius:0 7px 7px 0;}
+
+/* রঙ থিম — তাহকিক (বেগুনি) */
+.th .nc-head{background:#f5eeff;}
+.th .nc-head:hover{background:#ecdff7;}
+.th .nc-num{background:#5a2d82;color:#e0c8ff;}
+.th .nc-head h3{color:#5a2d82;}
+.th .nc-tog{color:#7a4db5;}
+.th-txt{font-size:.88rem;line-height:2;color:var(--tm);background:#faf5ff;border-left:3px solid #7a4db5;padding:11px 14px;border-radius:0 7px 7px 0;}
+.th-txt .ar{font-family:'Amiri',serif;font-size:1.1rem;direction:rtl;text-align:right;display:block;margin:8px 0;color:#3a1060;background:#f0eaff;padding:8px 12px;border-radius:6px;line-height:2.2;}
+
+/* পরীক্ষার প্রশ্ন (কমলা) */
+.ex .nc-head{background:#fff3e8;}
+.ex .nc-head:hover{background:#ffe8d0;}
+.ex .nc-num{background:#c45800;color:#ffe0c0;}
+.ex .nc-head h3{color:#c45800;}
+.ex .nc-tog{color:#e07030;}
+.ex-empty{text-align:center;padding:48px 20px;color:#bbb;}
+.ex-empty .ic{font-size:3rem;margin-bottom:10px;}
+.ex-empty p{font-size:.9rem;line-height:1.8;}
+
+/* প্রিন্ট বাটন (কোণায়) */
+.print-fab{position:fixed;bottom:24px;right:24px;z-index:300;}
+.print-fab-btn{background:var(--gd);color:var(--goldf);border:2px solid var(--gold);border-radius:50px;padding:10px 18px;font-family:'Hind Siliguri',sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:7px;box-shadow:0 4px 18px rgba(0,0,0,.3);transition:all .2s;}
+.print-fab-btn:hover{background:var(--gm);transform:translateY(-2px);}
+
+/* প্রিন্ট মডাল */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:400;display:none;align-items:center;justify-content:center;padding:20px;}
+.modal-bg.on{display:flex;}
+.modal{background:#fff;border-radius:16px;width:100%;max-width:540px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4);}
+.modal-head{background:var(--gd);padding:18px 22px;display:flex;align-items:center;justify-content:space-between;}
+.modal-head h3{color:var(--goldf);font-size:1.05rem;font-weight:700;}
+.modal-close{background:none;border:none;color:rgba(255,255,255,.7);font-size:1.3rem;cursor:pointer;padding:2px 6px;}
+.modal-close:hover{color:#fff;}
+.modal-body{padding:20px 22px;}
+.modal-body p{font-size:.86rem;color:#555;margin-bottom:16px;line-height:1.7;}
+.sel-bar{display:flex;align-items:center;justify-content:space-between;background:#f5f5f5;border-radius:8px;padding:9px 14px;margin-bottom:12px;flex-wrap:wrap;gap:7px;}
+.chk-all-label{display:flex;align-items:center;gap:8px;color:#333;font-weight:600;font-size:.86rem;cursor:pointer;}
+.chk-all-label input{width:16px;height:16px;cursor:pointer;accent-color:var(--gd);}
+.sel-badge{background:var(--gd);color:var(--goldf);font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:20px;}
+.pck-list{max-height:220px;overflow-y:auto;margin-bottom:16px;display:flex;flex-direction:column;gap:6px;}
+.pck-list::-webkit-scrollbar{width:4px;}.pck-list::-webkit-scrollbar-thumb{background:#ccc;border-radius:4px;}
+.pck-item{background:#f9f9f9;border:1.5px solid #e5e5e5;border-radius:8px;padding:9px 12px;display:flex;align-items:center;gap:9px;cursor:pointer;transition:all .18s;}
+.pck-item:hover{background:#f0f0f0;}
+.pck-item.sel{background:#eef8f2;border-color:var(--gm);}
+.pck-item input{width:15px;height:15px;cursor:pointer;accent-color:var(--gd);flex-shrink:0;}
+.pck-title{font-size:.82rem;font-weight:600;color:#333;line-height:1.4;}
+.pck-sub{font-size:.72rem;color:#888;margin-top:1px;}
+.pbtn-row{display:flex;gap:10px;flex-wrap:wrap;}
+.pbtn{display:flex;align-items:center;gap:10px;padding:12px 16px;border:none;border-radius:10px;cursor:pointer;font-family:'Hind Siliguri',sans-serif;font-weight:700;font-size:.86rem;flex:1;min-width:180px;transition:all .2s;}
+.pbtn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.2);}
+.pbtn-p{background:var(--gold);color:var(--gd);}
+.pbtn-l{background:var(--gd);color:var(--goldf);}
+.pbtn .p-ic{font-size:1.6rem;}
+.p-main{font-size:.86rem;display:block;}
+.p-sub{font-size:.72rem;font-weight:400;opacity:.75;display:block;}
+.modal-tip{margin-top:12px;font-size:.78rem;color:#888;line-height:1.6;}
+
+/* FOOTER */
+footer{background:#0f2318;color:rgba(255,255,255,.5);text-align:center;padding:18px 24px;font-size:.78rem;border-top:1px solid rgba(255,255,255,.08);}
+footer strong{color:var(--goldf);}
+
+/* PRINT */
+@media print{
+  header,nav,.sec-tabs,.srch-wrap,.sub-bar,.res-count,.no-res,.print-fab,.modal-bg,footer{display:none!important;}
+  body{background:#fff!important;}
+  .sec{display:none!important;}.sec.on{display:block!important;}
+  .q-main{padding:0!important;max-width:100%!important;}
+  .nc{display:none!important;}
+  .nc.fp{display:block!important;page-break-inside:avoid;break-inside:avoid;margin-bottom:10pt;border:1px solid #ccc!important;border-radius:4pt!important;}
+  .nc-head{padding:7pt 11pt!important;}
+  .nc-num{width:20pt!important;height:20pt!important;font-size:7pt!important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .nc-head h3{font-size:10pt!important;}
+  .nc-tog{display:none!important;}
+  .nc-body{display:block!important;max-height:none!important;padding:8pt 11pt!important;overflow:visible!important;}
+  .q-box{font-size:9pt!important;padding:6pt 10pt!important;background:#f0f6ff!important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .a-box{font-size:9pt!important;padding:6pt 10pt!important;background:#f9f6ef!important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .a-box .ar{font-size:12pt!important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .ar-txt{font-size:12pt!important;background:#fdf8ee!important;border:1px solid #ddd!important;padding:7pt 11pt!important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .sr-ref{background:#c9a84c!important;color:#1a3d2b!important;font-size:7pt!important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .bn-txt{font-size:9pt!important;background:#f9f6ef!important;border-left:2pt solid #2e6b4a!important;padding:6pt 10pt!important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .th-txt{font-size:9pt!important;background:#faf5ff!important;border-left:2pt solid #7a4db5!important;padding:6pt 10pt!important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .th-txt .ar{font-size:12pt!important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .sn .nc-head{background:#f0e8d0!important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .qa .nc-head{background:#eef4fb!important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .th .nc-head{background:#f5eeff!important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .pdoc-head{display:block!important;text-align:center;border-bottom:2pt solid #c9a84c;padding-bottom:8pt;margin-bottom:12pt;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .pdoc-head h1{font-family:'Amiri',serif;font-size:17pt;color:#1a3d2b;}
+  .pdoc-head p{font-size:8pt;color:#555;margin-top:3pt;}
+  @page{margin:13mm;}
+}
+@media print{
+  body.land .q-main{columns:2;column-gap:16pt;}
+  body.land .nc.fp{break-inside:avoid;column-break-inside:avoid;}
+  body.land .pdoc-head{column-span:all;}
+}
+.pdoc-head{display:none;}
+@media(max-width:580px){.n-links a{font-size:.72rem;padding:5px 8px;}.stab{font-size:.78rem;padding:11px 13px;}.pbtn{min-width:100%;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-inner">
+    <div class="h-logo">📖 পবিত্র কুরআন শরীফ</div>
+    <div class="h-sub">প্রশ্নোত্তর • শানে নুযূল • তাহকিক • পরীক্ষার প্রশ্ন</div>
+    <div class="h-line"></div>
+  </div>
+</header>
+
+<nav>
+  <div class="n-inner">
+    <span class="n-brand">📚 এডুকেশন নোটস</span>
+    <div class="n-links">
+      <a href="index.html">🏠 হোম</a>
+      <a href="quran-sharif.html" class="on">কুরআন শরীফ</a>
+    </div>
+  </div>
+</nav>
+
+<!-- মেইন ট্যাব -->
+<div class="sec-tabs">
+  <div class="sec-tabs-inner">
+    <button class="stab on" onclick="showSec('qa',this)"><span>❓</span> প্রশ্নোত্তর</button>
+    <button class="stab" onclick="showSec('sn',this)"><span>📖</span> শানে নুযূল</button>
+    <button class="stab" onclick="showSec('th',this)"><span>🔍</span> তাহকিক</button>
+    <button class="stab" onclick="showSec('ex',this)"><span>📝</span> পরীক্ষার প্রশ্ন</button>
+  </div>
+</div>
+
+<!-- ══════════ প্রশ্নোত্তর ══════════ -->
+<div id="sec-qa" class="sec on">
+  <div class="srch-wrap"><div class="srch-box">
+    <input type="text" id="srch-qa" placeholder="প্রশ্ন খুঁজুন... যেমন: মক্কী, তাফসীর, বদর, গাজওয়া" oninput="filter('qa')"/>
+    <span class="srch-ic">🔍</span>
+  </div></div>
+  <div class="sub-bar"><div class="sub-bar-inner">
+    <button class="sb on" onclick="subTab('qa','all',this)">সব নোটস</button>
+    <button class="sb" onclick="subTab('qa','baqara',this)">সূরা বাক্বারা</button>
+    <button class="sb" onclick="subTab('qa','imran',this)">সূরা আল ইমরান</button>
+    <button class="sb" onclick="subTab('qa','general',this)">সাধারণ</button>
+  </div></div>
+  <div class="q-main">
+    <div class="pdoc-head"><h1>পবিত্র কুরআন শরীফ — প্রশ্নোত্তর</h1><p>এডুকেশন নোটস | মহান আল্লাহ পাক তিনি এবং উনার হাবীব নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনাদের শান মুবারকে সর্বোচ্চ আদব সহকারে</p></div>
+    <div class="res-count">❓ মোট <strong id="qa-cnt">১৯</strong>টি নোটস</div>
+    <div class="no-res" id="qa-nores">😔 কোনো ফলাফল পাওয়া যায়নি।</div>
+
+    <div class="nc qa" data-s="general" data-k="মক্কী মাদানী সূরা হিজরত নাযিল">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">১</div><h3>মক্কী ও মাদানী সূরা কাকে বলে? সংখ্যা কত?</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">মক্কী ও মাদানী সূরা কাকে বলে? মক্কী ও মাদানী সূরার সংখ্যা কত?</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">যে সমস্ত পবিত্র সূরা শরীফ নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার হিজরত মুবারক উনার <strong>পূর্বে</strong> নাযিল হয়েছেন, সে সমস্ত পবিত্র সূরা শরীফকে <strong>মক্কী সূরা</strong> বলে।<br><br>আর যে সমস্ত পবিত্র সূরা শরীফ উনার হিজরত মুবারক উনার <strong>পর</strong> নাযিল হয়েছেন, সে সমস্ত পবিত্র সূরা শরীফকে <strong>মাদানী সূরা</strong> বলে।<br><br>📌 মক্কী সূরার সংখ্যা: <strong>৮৬টি</strong> | মাদানী সূরার সংখ্যা: <strong>২৮টি</strong></div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="general" data-k="তাফসীর তাউয়ীল ব্যাখ্যা কুরআন">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">২</div><h3>তাফসীর ও তা'উয়ীল কী? পার্থক্য কী?</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">তাফসীর ও তা'উয়ীল কী? উভয়ের মধ্যে পার্থক্য লেখো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box"><strong>তাফসীর:</strong> আমভাবে যেকোনো কিছুর ব্যাখ্যাকে তাফসীর বলে। পবিত্র কুরআন শরীফ উনার তাফসীর যে কেউ করতে পারে।<br><br><strong>তা'উয়ীল:</strong> খাছভাবে পবিত্র কুরআন শরীফ উনারই ব্যাখ্যাকে তা'উয়ীল বলে। পবিত্র কুরআন শরীফ উনার তা'উয়ীল শুধুমাত্র মহান আল্লাহ পাক তিনি এবং হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম তিনি উনারাই জানেন।<br><br>📌 সংক্ষেপে: তাফসীর = পবিত্র কুরআন শরীফ উনার সাধারণ ব্যাখ্যা | তা'উয়ীল = বিশেষ সারমর্ম।</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="general" data-k="গাজওয়া জিহাদ নবী উপস্থিত">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">৩</div><h3>গাজওয়া কী? বিখ্যাত গাজওয়াগুলোর নাম লেখো।</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">গাজওয়া কাকে বলে? মশহুর ও বিশুদ্ধ মতে গাজওয়ার সংখ্যা ও নামগুলো লেখো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">যে সমস্ত জিহাদে স্বয়ং নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম তিনি নিজে উপস্থিত ছিলেন, সে সমস্ত জিহাদকে <strong>গাজওয়া</strong> বলা হয়।<br><br>মশহুর ও বিশুদ্ধ মতে গাজওয়া জিহাদ <strong>৯টি:</strong><br>১. বদরের জিহাদ &nbsp; ২. উহুদের জিহাদ &nbsp; ৩. বনু মুছতালিকের জিহাদ<br>৪. খন্দকের জিহাদ &nbsp; ৫. হুদায়বিয়ার সন্ধি &nbsp; ৬. খায়বার জিহাদ<br>৭. মক্কা শরীফ বিজয় &nbsp; ৮. হুনাইনের জিহাদ &nbsp; ৯. তাবুকের জিহাদ</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="imran" data-k="কাফির মুশরিক ইহুদী বন্ধুত্ব নিষেধ">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">৪</div><h3>কাফিরদের সাথে বন্ধুত্ব করার হুকুম কী?</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">কাফিরদের সাথে বন্ধুত্ব করার হুকুম কী? কুরআনের আলোকে বর্ণনা করো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">কোনো মুসলমানের জন্য কোনো অবস্থাতেই কাফির, মুশরিক, ইহুদী, নাছারাদেরকে বন্ধু হিসেবে গ্রহণ করা <strong>জায়েয নেই</strong>।<br><br>হাদীছ শরীফে ইরশাদ মুবারক হয়েছে —<span class="ar">اَلْمَرْأُ مَعَ مَنْ اَحَبَّ</span>অর্থ: যে যাকে মুহব্বত করবে সে তার অন্তর্ভুক্ত হবে।<br><br>মহান আল্লাহ পাক তিনি ইরশাদ মুবারক করেন —<span class="ar">يَا أَيُّهَا الَّذِينَ اٰمَنُوْا لَا تَتَّخِذُوْا بِطَانَةً مِّنْ دُوْنِكُمْ</span>অর্থ: হে ঈমানদারগণ! তোমরা মুসলমান ছাড়া বিধর্মীদেরকে ঘনিষ্ঠ বন্ধু হিসেবে গ্রহণ করো না। (সূরা আল ইমরান: আয়াত ১১৮)</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="general" data-k="বাইতুল্লাহ কাবা নির্মাণ সংস্কার ইতিহাস">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">৫</div><h3>বাইতুল্লাহ শরীফ কারা নির্মাণ ও সংস্কার করেছেন?</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">বাইতুল্লাহ শরীফ নির্মাণ ও সংস্কারের তারতীব বর্ণনা করো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">বাইতুল্লাহ শরীফ অনেকেই নির্মাণ ও সংস্কার করেছেন। তারতীব অনুসারে:<br><br>১. হযরত ফেরেশতা আলাইহিমুস সালাম<br>২. হযরত আদম আলাইহিস সালাম<br>৩. হযরত শীষ আলাইহিস সালাম<br>৪. হযরত ইব্রাহীম আলাইহিস সালাম<br>৫. আমালিকা গোত্র<br>৬. জুরহাম গোত্র<br>৭. হযরত কুসাই ইবনে কিলাব আলাইহিস সালাম<br>৮. কুরাঈশরা<br>৯. হযরত আব্দুল্লাহ ইবনে যুবায়ের রদ্বিয়াল্লাহু তায়ালা আনহু<br>১০. ইরাকের গভর্নর হাজ্জাজ বিন ইউছুফ</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="general" data-k="কুরআন নাযিল শবে কদর লাওহে মাহফুয ধারা">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">৬</div><h3>পবিত্র কুরআন শরীফ নাযিলের ধারা বর্ণনা করো।</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">পবিত্র কুরআন শরীফ নাযিলের ধারা কীভাবে ছিল? বিস্তারিত লেখো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">পবিত্র কুরআন শরীফ নাযিলের সিদ্ধান্ত নেয়া হয় <strong>শবে বরাতে</strong>।<br><br>পবিত্র <strong>শবে ক্বদরে</strong> লাওহে মাহফুয থেকে প্রথম আসমানে বাইতুল ইজ্জত নামক হুযরা শরীফে <strong>একত্রে পুরো পবিত্র কুরআন শরীফ</strong> নাযিল হন।<br><br>এরপর <strong>১২ই রবীউল আউওয়াল শরীফে</strong> নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার নিকট প্রথম আনুষ্ঠানিকভাবে নাযিল শুরু হন এবং দীর্ঘ <strong>২৩ বছরে</strong> পুরো পবিত্র কুরআন শরীফ নাযিল হন।</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="general" data-k="কুরআন পরিসংখ্যান সূরা আয়াত রুকু পারা মঞ্জিল সিজদা">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">৭</div><h3>পবিত্র কুরআন শরীফের পরিসংখ্যান লেখো।</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">পবিত্র কুরআন শরীফ উনার পরিসংখ্যান বর্ণনা করো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">পবিত্র কুরআন শরীফ উনার মধ্যে —<br><br>📌 পবিত্র সূরা: <strong>১১৪টি</strong><br>📌 পবিত্র আয়াত: <strong>৬৬৬৬টি</strong><br>📌 পবিত্র রুকু: <strong>৫৪০টি</strong><br>📌 পবিত্র মঞ্জিল: <strong>৭টি</strong><br>📌 পবিত্র পারা: <strong>৩০টি</strong><br>📌 সিজদাহ আয়াত: <strong>১৪টি</strong></div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="baqara" data-k="সূরা ফাতিহা নাম অর্থ দশটি">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">৮</div><h3>পবিত্র সূরা ফাতিহা শরীফ উনার ১০টি নাম অর্থসহ লেখো।</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">পবিত্র সূরা ফাতিহা শরীফ উনার ১০টি নাম অর্থসহ লেখো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">
+          ১. <strong>اَلْفَاتِحَةُ</strong> — অর্থ: প্রারম্ভিকা<br>
+          ২. <strong>اُمُّ الْكِتَاب</strong> — অর্থ: সম্মানিত কিতাব উনার মূল<br>
+          ৩. <strong>اُمُّ الْقُرْاٰنَ</strong> — অর্থ: পবিত্র কুরআন শরীফ উনার মূল<br>
+          ৪. <strong>اَلسَّبْعُ الْمَثَانِي</strong> — অর্থ: বারবার পাঠ করা হয় এমন সূরা শরীফ<br>
+          ৫. <strong>سُوْرَةُ الْحَمْدُ</strong> — অর্থ: প্রশংসার পবিত্র সূরা শরীফ<br>
+          ৬. <strong>سُوْرَةُ الصَّلٰوةِ</strong> — অর্থ: নামাজ উনার পবিত্র সূরা শরীফ<br>
+          ৭. <strong>سُوْرَةُ الشِّفَاءِ</strong> — অর্থ: আরোগ্যদানকারী পবিত্র সূরা শরীফ<br>
+          ৮. <strong>سُوْرَةُ الرُّقْيَةِ</strong> — অর্থ: ঝাড় ফুঁক করার পবিত্র সূরা শরীফ<br>
+          ৯. <strong>سُوْرَةُ الْاَسَاسِ</strong> — অর্থ: মৌলিক সূরা শরীফ<br>
+          ১০. <strong>اَلْوَافِيَةُ</strong> — অর্থ: পূর্ণতা দানকারী সূরা শরীফ
+        </div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="general" data-k="মুত্তাকী পরিচয় খুছুছিয়ত তাক্বওয়া">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">৯</div><h3>সম্মানিত মুত্তাকীর পরিচয় ও খুছুছিয়ত কী?</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">সম্মানিত মুত্তাকীর পরিচয় দাও এবং পবিত্র কুরআন শরীফের আলোকে উনাদের খুছুছিয়ত বর্ণনা করো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">যারা মহান আল্লাহ পাক উনার উপর তায়াক্কুল করেন, তাক্বওয়া অবলম্বন করেন এবং সর্বক্ষেত্রে সম্মানিত সুন্নত মুবারক উনার ইত্তেবা করেন উনারাই হচ্ছেন <strong>সম্মানিত মুত্তাকী</strong>।<br><br>পবিত্র কুরআন শরীফ উনার আলোকে মুত্তাকীদের ৫টি খুছুছিয়ত:<br>১. যারা অদৃশ্যের প্রতি বিশ্বাস স্থাপন করেন<br>২. যারা নামায কায়েম করেন<br>৩. যারা নিজেদের রিযিক থেকে দান করেন<br>৪. যারা হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার প্রতি নাযিলকৃত কিতাবে ঈমান আনেন<br>৫. যারা পরকালের প্রতি দৃঢ় বিশ্বাস স্থাপন করেন</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="baqara" data-k="বাক্বারা গাভী গরু বনী ইসরাইল মূসা হত্যা">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">১০</div><h3>بقرة (বাক্বারা) উনার ঘটনা বর্ণনা করো।</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">بقرة (বাক্বারা) উনার ঘটনা বর্ণনা করো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">বনী ইসরাঈলের এক ব্যক্তি তার চাচার সম্পদের লোভে তার চাচাকে হত্যা করে এবং নিজেই হত্যাকারীর বিচার চেয়ে কান্নাকাটি শুরু করে।<br><br>হযরত মূসা আলাইহিস সালাম উনার নিকট বনী ইসরাঈলের লোকেরা আসলে মহান আল্লাহ পাক তিনি একটি বিশেষ <strong>গাঢ় হলদে রঙের গাভী</strong> যবেহ করার নির্দেশ মুবারক দেন — যা দিয়ে কোনোদিন পানি সেচ বা জমিন চাষের কাজ হয়নি এবং যা নিখুঁত।<br><br>সেই গাভী যবেহ করার পর তার গোশত নিহত ব্যক্তির শরীরে স্পর্শ করালে সেই ব্যক্তি <strong>জীবিত হয়ে খুনির নাম বলে দেন</strong>। ইহাই بقرة উনার ঘটনা।</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="general" data-k="খলীফা অর্থ আদম মানুষ">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">১১</div><h3>خليفة (খলীফা) শব্দের অর্থ কী?</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">পবিত্র কুরআন শরীফে ব্যবহৃত خليفة (খলীফা) শব্দটি কাদেরকে বুঝায়?</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box"><strong>আমভাবে:</strong> সাধারণভাবে সকল মানুষকে বুঝানো হয়েছে।<br><br><strong>খাছভাবে:</strong> সাইয়্যিদুনা হযরত আবুল বাশার ছফিউল্লাহ আলাইহিস সালাম উনাকে বুঝানো হয়েছে।<br><br><strong>আখাচ্ছুল খাছভাবে:</strong> নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনাকে বুঝানো হয়েছে।</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="imran" data-k="সূরা আল ইমরান পরিচয় আয়াত রুকু মাদানী">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">১২</div><h3>পবিত্র সূরা আল ইমরান শরীফ উনার পরিচয় দাও।</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">পবিত্র সূরা আল ইমরান শরীফ উনার পরিচয় দাও।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">পবিত্র সূরা আল ইমরান শরীফ হচ্ছেন একটি <strong>মাদানী সূরা</strong>।<br><br>📌 পবিত্র আয়াত সংখ্যা: <strong>২০০টি</strong><br>📌 পবিত্র রুকু সংখ্যা: <strong>২০টি</strong><br><br>এই পবিত্র সূরায় হযরত ঈসা আলাইহিস সালাম উনার জন্মবৃত্তান্ত, উহুদ যুদ্ধের ঘটনা ও ঈমানের মৌলিক বিষয় বর্ণনা করা হয়েছে।</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="general" data-k="সুদ হারাম যাকাত বাইতুন নুক্বূদ">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">১৩</div><h3>সুদ কী? সুদের হুকুম কী?</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">সুদ কী? ইসলামে সুদের হুকুম কী? কুরআনের দলীলসহ লেখো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">الربو শব্দটি আরবী — অর্থ: সুদ, অতিরিক্ত হওয়া। পরিভাষায়: ক্রয়-বিক্রয় চুক্তির বহির্ভূত মালের অতিরিক্ত অংশকে সুদ বলা হয়।<br><br>মহান আল্লাহ পাক তিনি সুদ ব্যবস্থাকে <strong>হারাম</strong> করেছেন এবং যাকাত ব্যবস্থাকে হালাল করেছেন।<br><br><span class="ar">أَحَلَّ اللّٰهُ الْبَيْعَ وَحَرَّمَ الرِّبٰو</span>অর্থ: মহান আল্লাহ পাক তিনি হালাল করেছেন ক্রয়-বিক্রয়কে এবং হারাম করেছেন সুদকে। (সূরা বাকারা: আয়াত ২৭৫)<br><br>⚠️ সুদের সাথে সংশ্লিষ্ট ১০ ব্যক্তির উপর মহান আল্লাহ পাক উনার লা'নত। নাউযূবিল্লাহ!</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="imran" data-k="মুসলমান শ্রেষ্ঠ উম্মত সৎ কাজ আদেশ নিষেধ">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">১৪</div><h3>মুসলমানগণ কেন সর্বশ্রেষ্ঠ সম্প্রদায়?</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">মুসলমানগণ কেন সর্বশ্রেষ্ঠ সম্প্রদায়? কুরআনের আলোকে বর্ণনা করো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">মুসলমান উনাদের জন্য ফরয ও ওয়াজিব হচ্ছে সর্বদা সৎ কাজে আদেশ করা ও অসৎ কাজে নিষেধ করা।<br><br>মহান আল্লাহ পাক তিনি ইরশাদ মুবারক করেন —<span class="ar">كُنْتُمْ خَيْرَ أُمَّةٍ أُخْرِجَتْ لِلنَّاسِ تَأْمُرُوْنَ بِالْمَعْرُوفِ وَتَنْهَوْنَ عَنِ الْمُنْكَرِ وَتُؤْمِنُونَ بِاللَّهِ</span>অর্থ: আপনারাই শ্রেষ্ঠ উম্মত — সৎ কাজে আদেশ করুন, বদ কাজে নিষেধ করুন, মহান আল্লাহ পাক উনার প্রতি ঈমান আনুন। (সূরা আল ইমরান: আয়াত ১১০)</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="general" data-k="বদর জিহাদ দ্বিতীয় হিজরী রমাদান মুসলমান কাফির">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">১৫</div><h3>সম্মানিত বদর জিহাদ সম্পর্কে লেখো।</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">সম্মানিত বদর জিহাদ সম্পর্কে বিস্তারিত লেখো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">দ্বিতীয় হিজরীর <strong>১৭ই রমাদ্বান শরীফে</strong> পবিত্র মদীনা শরীফ থেকে ৮০ মাইল দূরে বদর নামক স্থানে এই সম্মানিত জিহাদ সংঘটিত হন।<br><br>📌 মুসলমান: <strong>৩১৩ জন</strong><br>📌 কাফির: <strong>১০০০ জন</strong><br>📌 মুসলমান শহীদ: <strong>১৪ জন</strong><br>📌 কাফির নিহত: <strong>৭০ জন</strong><br>📌 কাফির বন্দী: <strong>৭০ জন</strong><br><br>মুসলমান উনারা সুস্পষ্ট বিজয় লাভ করেন। সুবহানাল্লাহ!</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="general" data-k="উহুদ জিহাদ জিহাদের নিয়ম গিরিপথ বিজয়">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">১৬</div><h3>পবিত্র উহুদ জিহাদ সম্পর্কে লেখো।</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">পবিত্র উহুদ জিহাদ সম্পর্কে বিস্তারিত লেখো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">পবিত্র উহুদ জিহাদ মল্লযুদ্ধের মাধ্যমে শুরু হলে একপর্যায়ে কাফিররা দলে দলে পালিয়ে যেতে থাকে। পরে জিহাদের নিয়ম-নীতি ভঙ্গ করে কাফিররা পিছনের গিরিপথ দিয়ে আক্রমণ করে, কিন্তু মুসলমান উনারা সমুচিত জওয়াব দেন।<br><br>বিশ্বের ইতিহাসে কোনো জিহাদে মুসলমান উনারা পরাজিত হননি। উহুদ জিহাদেও মুসলমান উনারাই বিজয়ী হয়েছেন।<br><br>মহান আল্লাহ পাক নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার সম্মানার্থে উহুদ জিহাদেও মুসলমান উনাদেরকে <strong>সুস্পষ্ট বিজয়</strong> দান করেন। ইহাই বিশুদ্ধ এবং ছহীহ আক্বীদা।</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="general" data-k="মুসলিম ভ্রাতৃত্ব ভাই মুমিন">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">১৭</div><h3>মুসলিম ভ্রাতৃত্ব সম্পর্কে কুরআন ও হাদীছের আলোকে লেখো।</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">মুসলিম ভ্রাতৃত্ব সম্পর্কে কুরআন ও হাদীছ শরীফের আলোকে লেখো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">হাদীছ শরীফে ইরশাদ মুবারক হয়েছে —<span class="ar">اَلْمُسْلِمُ أَخُ الْمُسْلِمِ</span>অর্থ: একজন মুসলমান ও অপরজন মুসলমান পরস্পর ভাই ভাই।<br><br>পবিত্র কুরআন শরীফে মহান আল্লাহ পাক তিনি ইরশাদ মুবারক করেন —<span class="ar">إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ</span>অর্থ: নিশ্চয়ই মু'মিনগণ পরস্পর ভাই ভাই।<br><br>হাদীছ শরীফে আরো ইরশাদ মুবারক হয়েছে —<span class="ar">اَلْمُؤْمِنُونَ كَجَسَدٍ وَاحِدٍ</span>অর্থ: সমস্ত মু'মিনগণ একটি শরীরের ন্যায় — যখন তার চোখ ব্যথিত হয়, তখন তার সমস্ত শরীর ব্যথিত হয়।</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="general" data-k="খন্দক জিহাদ পরিখা হিজরী দৈর্ঘ্য গভীরতা">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">১৮</div><h3>সম্মানিত খন্দকের জিহাদ সম্পর্কে লেখো।</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">সম্মানিত খন্দকের জিহাদ সম্পর্কে বিস্তারিত লেখো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box">খন্দকের জিহাদ অনুষ্ঠিত হয় <strong>৫ম হিজরীর পবিত্র রবীউল আউওয়াল শরীফ মাসে</strong>।<br><br>হযরত ছাহাবায়ে কিরাম রদ্বিয়াল্লাহু তায়ালা আনহুম উনারা নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার নির্দেশ মুবারকে পরিখা খনন করেন।<br><br>📌 পরিখার দৈর্ঘ্য: <strong>৫০০০ হাত</strong><br>📌 প্রস্থ: <strong>৯–১০ হাত</strong><br>📌 গভীরতা: <strong>৭–৯ হাত</strong><br>📌 মুসলমান শহীদ: <strong>৬ জন</strong> | কাফির নিহত: <strong>১০ জন</strong><br><br>নূরে মুজাসসাম হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম তিনি কঠিন বদ দোয়া করে কিছু বালু নিক্ষেপ করলে ভয়ানক ঝড়-তুফান শুরু হয়। কাফিরগুলো জীবন নিয়ে পালিয়ে যায় এবং মুসলমান উনারা <strong>সুস্পষ্ট বিজয়</strong> লাভ করেন।</div>
+      </div>
+    </div>
+
+    <div class="nc qa" data-s="general" data-k="الربو সুদ সংজ্ঞা পরিভাষা হুকুম হারাম">
+      <div class="nc-head" onclick="tog(this)"><div class="nc-num">১৯</div><h3>الربو (সুদ) — সংজ্ঞা ও হুকুম বিস্তারিত লেখো।</h3><span class="nc-tog">▼</span></div>
+      <div class="nc-body">
+        <div class="q-lbl">❓ প্রশ্ন</div>
+        <div class="q-box">الربو (সুদ) শব্দের অর্থ, সংজ্ঞা ও ইসলামে এর হুকুম বিস্তারিত লেখো।</div>
+        <div class="a-lbl">✅ উত্তর</div>
+        <div class="a-box"><strong>শাব্দিক অর্থ:</strong> الربو শব্দটি আরবী — অর্থ: সুদ, অতিরিক্ত হওয়া।<br><br><strong>পরিভাষায়:</strong> ক্রয়-বিক্রয় চুক্তির বহির্ভূত মালের অতিরিক্ত অংশকে সুদ বলা হয়।<br><br><strong>হুকুম:</strong> সুদ সম্পূর্ণ হারাম। মহান আল্লাহ পাক তিনি ইরশাদ মুবারক করেন —<span class="ar">أَحَلَّ اللّٰهُ الْبَيْعَ وَحَرَّمَ الرِّبٰو</span>অর্থ: মহান আল্লাহ পাক তিনি হালাল করেছেন ক্রয়-বিক্রয়কে এবং হারাম করেছেন সুদকে। (সূরা বাকারা: আয়াত ২৭৫)<br><br>⚠️ সুদের সাথে সংশ্লিষ্ট ১০ ব্যক্তির উপর মহান আল্লাহ পাক উনার লা'নত। নাউযূবিল্লাহ!</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════ শানে নুযূল ══════════ -->
+<div id="sec-sn" class="sec">
+  <div class="srch-wrap"><div class="srch-box">
+    <input type="text" id="srch-sn" placeholder="আয়াত নম্বর বা বিষয় লিখুন... যেমন: উহুদ, খন্দক, কিবলা" oninput="filter('sn')"/>
+    <span class="srch-ic">🔍</span>
+  </div></div>
+  <div class="sub-bar"><div class="sub-bar-inner">
+    <button class="sb on" onclick="subTab('sn','all',this)">সকল আয়াত</button>
+    <button class="sb" onclick="subTab('sn','baqara',this)">সূরা বাক্বারা</button>
+    <button class="sb" onclick="subTab('sn','imran',this)">সূরা আল ইমরান</button>
+  </div></div>
+  <div class="q-main">
+    <div class="pdoc-head"><h1>পবিত্র কুরআন শরীফ — শানে নুযূল</h1><p>এডুকেশন নোটস | মহান আল্লাহ পাক তিনি এবং উনার হাবীব নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনাদের শান মুবারকে সর্বোচ্চ আদব সহকারে</p></div>
+    <div class="res-count">📖 মোট <strong id="sn-cnt">৯</strong>টি আয়াতের শানে নুযূল</div>
+    <div class="no-res" id="sn-nores">😔 কোনো ফলাফল পাওয়া যায়নি।</div>
+
+    <div class="nc sn" data-s="baqara" data-k="বাক্বারা ১৯ মুনাফিক বৃষ্টি বজ্র বিদ্যুৎ মদীনা"><div class="nc-head" onclick="tog(this)"><div class="nc-num">১</div><h3>সূরা বাক্বারা — আয়াত ১৯</h3><span class="nc-tog">▼</span></div><div class="nc-body"><span class="sr-ref">সূরা বাক্বারা ﴿١٩﴾</span><div class="ar-txt">أَوْ كَصَيِّبٍ مِّنَ السَّمَاءِ فِيهِ ظُلُمَاتٌ وَرَعْدٌ وَبَرْقٌ يَجْعَلُونَ أَصَابِعَهُمْ فِي آذَانِهِم مِّنَ الصَّوَاعِقِ حَذَرَ الْمَوْتِ ۚ وَاللَّهُ مُحِيطٌ بِالْكَافِرِينَ</div><div class="bn-txt"><strong>শানে নুযূল:</strong> পবিত্র মদীনা শরীফের দুজন মুনাফিক নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার দরবার শরীফ থেকে সম্মানিত দীন ইসলাম ত্যাগ করে পালিয়ে যাচ্ছিল। পথিমধ্যে ঘোর অন্ধকারে বৃষ্টি, বজ্রধ্বনি ও বিদ্যুৎ চমক শুরু হল। বজ্রপাতের ভয়ে তারা নিজেদের কানের ভেতর আঙুল ঢুকিয়ে দিল।<br><br>বিদ্যুৎ চমকালে কিছুটা পথ চলত, অন্ধকার হলে দাঁড়িয়ে যেত। বিপদে পড়ে বলল — "আগামীকাল হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার খিদমতে ফিরে ইসলাম গ্রহণ করব।" এর প্রেক্ষিতে মহান আল্লাহ পাক তিনি এই পবিত্র আয়াত শরীফ নাযিল করেন।</div></div></div>
+
+    <div class="nc sn" data-s="baqara" data-k="বাক্বারা ৪৪ ইহুদী দান আদেশ ঈমান"><div class="nc-head" onclick="tog(this)"><div class="nc-num">২</div><h3>সূরা বাক্বারা — আয়াত ৪৪</h3><span class="nc-tog">▼</span></div><div class="nc-body"><span class="sr-ref">সূরা বাক্বারা ﴿٤٤﴾</span><div class="ar-txt">أَتَأْمُرُونَ النَّاسَ بِالْبِرِّ وَتَنسَوْنَ أَنفُسَكُمْ وَأَنتُمْ تَتْلُونَ الْكِتَابَ ۚ أَفَلَا تَعْقِلُونَ</div><div class="bn-txt"><strong>শানে নুযূল:</strong> ইহুদীরা মানুষকে দান-খয়রাত করার আদেশ করত কিন্তু নিজেরা করত না। ইহুদী আলেমরা মুসলমানদেরকে বলত, "তোমরা হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার সম্মানিত দীন ইসলামের উপর বহাল থাকো।" অথচ তারা নিজেরা ঈমান গ্রহণ করত না।<br><br>তাদের এই দ্বিমুখী আচরণের প্রেক্ষিতে মহান আল্লাহ পাক তিনি এই পবিত্র আয়াত শরীফ নাযিল করেন।</div></div></div>
+
+    <div class="nc sn" data-s="baqara" data-k="বাক্বারা ১২০ ইহুদী খ্রিস্টান মিল্লাত ষড়যন্ত্র"><div class="nc-head" onclick="tog(this)"><div class="nc-num">৩</div><h3>সূরা বাক্বারা — আয়াত ১২০</h3><span class="nc-tog">▼</span></div><div class="nc-body"><span class="sr-ref">সূরা বাক্বারা ﴿١٢٠﴾</span><div class="ar-txt">وَلَن تَرْضَىٰ عَنكَ الْيَهُودُ وَلَا النَّصَارَىٰ حَتَّىٰ تَتَّبِعَ مِلَّتَهُمْ ۗ قُلْ إِنَّ هُدَى اللَّهِ هُوَ الْهُدَىٰ</div><div class="bn-txt"><strong>শানে নুযূল:</strong> ইয়াহুদী ও খ্রিস্টানরা সম্মানিত দীন ইসলামের প্রতি চরম বিদ্বেষ পোষণ করত। তারা দাবি করত যে মুসলমানরা তাদের মিল্লাত গ্রহণ করলেই তারা সন্তুষ্ট হবে।<br><br>মূলত তাদের ষড়যন্ত্রমূলক মনোভাব এবং তারা যে কখনোই মুসলমান উনাদের প্রকৃত বন্ধু হতে পারে না — সে বিষয়টি জানাতে মহান আল্লাহ পাক তিনি এই পবিত্র আয়াত শরীফ নাযিল করেন।</div></div></div>
+
+    <div class="nc sn" data-s="baqara" data-k="বাক্বারা ১৪৪ কিবলা বায়তুল মুকাদ্দাস কাবা মক্কা হিজরত"><div class="nc-head" onclick="tog(this)"><div class="nc-num">৪</div><h3>সূরা বাক্বারা — আয়াত ১৪৪</h3><span class="nc-tog">▼</span></div><div class="nc-body"><span class="sr-ref">সূরা বাক্বারা ﴿١٤٤﴾</span><div class="ar-txt">قَدْ نَرَىٰ تَقَلُّبَ وَجْهِكَ فِي السَّمَاءِ ۖ فَلَنُوَلِّيَنَّكَ قِبْلَةً تَرْضَاهَا ۚ فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ</div><div class="bn-txt"><strong>শানে নুযূল:</strong> পবিত্র মদীনা শরীফে হিজরত মুবারকের পর নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম তিনি প্রায় ১৬ বা ১৭ মাস পবিত্র বায়তুল মুকাদ্দাস শরীফের দিকে মুখ মুবারক ফিরিয়ে নামায আদায় করেন।<br><br>কিন্তু উনার পছন্দনীয় কিবলা ছিলেন পবিত্র কাবা শরীফ — যার কারণে তিনি মুবারক চেহারা আকাশের দিকে ফেরাতেন। তাই মহান আল্লাহ পাক তিনি পবিত্র কাবা শরীফকে কিবলা নির্ধারণ করে এই পবিত্র আয়াত শরীফ নাযিল করেন।</div></div></div>
+
+    <div class="nc sn" data-s="imran" data-k="ইমরান ২৬ খন্দক রোম পারস্য পাথর জিব্রাঈল ফারুক"><div class="nc-head" onclick="tog(this)"><div class="nc-num">৫</div><h3>সূরা আল ইমরান — আয়াত ২৬</h3><span class="nc-tog">▼</span></div><div class="nc-body"><span class="sr-ref">সূরা আল ইমরান ﴿٢٦﴾</span><div class="ar-txt">قُلِ اللَّهُمَّ مَالِكَ الْمُلْكِ تُؤْتِي الْمُلْكَ مَنْ تَشَاءُ وَتَنزِعُ الْمُلْكَ مِمَّن تَشَاءُ وَتُعِزُّ مَنْ تَشَاءُ وَتُذِلُّ مَنْ تَشَاءُ ۖ بِيَدِكَ الْخَيْرُ ۖ إِنَّكَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ</div><div class="bn-txt"><strong>শানে নুযূল:</strong> ৫ম হিজরীতে খন্দকের যুদ্ধে পরিখা খননের সময় বিরাট পাথর ভাঙতে তিনবার আলোর রশ্মি বের হয়। তার মাধ্যমে নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনাকে রোম, পারস্য ও ইয়েমেনের রাজ প্রাসাদ দেখানো হয়েছিল এবং হযরত জিব্রাঈল আলাইহিস সালাম উনার মাধ্যমে সুসংবাদ দেওয়া হয়েছিল যে মুসলমানগণ এগুলো বিজয় করবেন।<br><br>মুনাফিকরা বিদ্রূপ করলে মহান আল্লাহ পাক তিনি এই পবিত্র আয়াত শরীফ নাযিল করেন। সত্যিই হযরত ফারূকে আযম আলাইহিস সালাম উনার খিলাফতকালে রোম ও পারস্য বিজয় সাধিত হয়।</div></div></div>
+
+    <div class="nc sn" data-s="imran" data-k="ইমরান ৩১ মুহব্বত অনুসরণ জান্নাত গুনাহ ইহুদী খ্রিস্টান"><div class="nc-head" onclick="tog(this)"><div class="nc-num">৬</div><h3>সূরা আল ইমরান — আয়াত ৩১</h3><span class="nc-tog">▼</span></div><div class="nc-body"><span class="sr-ref">সূরা আল ইমরান ﴿٣١﴾</span><div class="ar-txt">قُلْ إِن كُنتُمْ تُحِبُّونَ اللَّهَ فَاتَّبِعُونِي يُحْبِبْكُمُ اللَّهُ وَيَغْفِرْ لَكُمْ ذُنُوبَكُمْ ۗ وَاللَّهُ غَفُورٌ رَّحِيمٌ</div><div class="bn-txt"><strong>শানে নুযূল:</strong> যখন নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম তিনি ইরশাদ মুবারক করলেন — "যে এক মহান আল্লাহ পাক উনাকে মানবে, সে জান্নাতে প্রবেশ করবে।" তখন কিছু ইহুদী ও খ্রিস্টান লোক এসে বলল, "আমরাতো এক আল্লাহকে মানি।"<br><br>হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম তিনি চুপ থাকলেন। তখন এই পবিত্র আয়াত শরীফ নাযিল হয় — যদি তারা সত্যিই মহান আল্লাহ পাক উনার মুহব্বতের দাবিদার হয়, তাহলে হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনাকে অনুসরণ করতে হবে। তবেই মহান আল্লাহ পাক তিনি মুহব্বত ও গুনাহ মাফ করবেন।</div></div></div>
+
+    <div class="nc sn" data-s="imran" data-k="ইমরান ১২৮ উহুদ দাঁত রক্ত শহীদ"><div class="nc-head" onclick="tog(this)"><div class="nc-num">৭</div><h3>সূরা আল ইমরান — আয়াত ১২৮</h3><span class="nc-tog">▼</span></div><div class="nc-body"><span class="sr-ref">সূরা আল ইমরান ﴿١٢٨﴾</span><div class="ar-txt">لَيْسَ لَكَ مِنَ الْأَمْرِ شَيْءٌ أَوْ يَتُوبَ عَلَيْهِمْ أَوْ يُعَذِّبَهُمْ فَإِنَّهُمْ ظَالِمُونَ</div><div class="bn-txt"><strong>শানে নুযূল:</strong> পবিত্র উহুদের যুদ্ধের দিন নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার মহাসম্মানিত ও মহাপবিত্র দাঁত মুবারক শহীদ হন এবং মুবারক মুখ থেকে পবিত্র রক্ত মুবারক পড়তে থাকে।<br><br>হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম তিনি বললেন — "যে জাতি স্বীয় নবী ও রসূল ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম উনার মুখমণ্ডল মুবারককে রক্ত মুবারকে রঞ্জিত করে, তারা কিভাবে মুক্তি পাবে?" এরই প্রেক্ষিতে মহান আল্লাহ পাক তিনি এই পবিত্র আয়াত শরীফ নাযিল করেন।</div></div></div>
+
+    <div class="nc sn" data-s="imran" data-k="ইমরান ১৫১ উহুদ কাফির মক্কা মদীনা ভয়"><div class="nc-head" onclick="tog(this)"><div class="nc-num">৮</div><h3>সূরা আল ইমরান — আয়াত ১৫১</h3><span class="nc-tog">▼</span></div><div class="nc-body"><span class="sr-ref">সূরা আল ইমরান ﴿١٥١﴾</span><div class="ar-txt">سَنُلْقِي فِي قُلُوبِ الَّذِينَ كَفَرُوا الرُّعْبَ بِمَا أَشْرَكُوا بِاللَّهِ مَا لَمْ يُنَزِّلْ بِهِ سُلْطَانًا ۖ وَمَأْوَاهُمُ النَّارُ ۚ وَبِئْسَ مَثْوَى الظَّالِمِينَ</div><div class="bn-txt"><strong>শানে নুযূল:</strong> উহুদ জিহাদে মুসলমান উনাদের বিজয় দেখে কাফিররা পবিত্র মক্কা শরীফের দিকে পালিয়ে যায়। কিছুদিন পর পুনরায় মদীনা আক্রমণের ইচ্ছা করতেই মহান আল্লাহ পাক তিনি তাদের মনে ভীতির সঞ্চার করেন। ফলে তারা মদীনার দিকে অগ্রসর হওয়ার সাহস হারিয়ে ফেলে। এর প্রেক্ষিতে মহান আল্লাহ পাক তিনি এই পবিত্র আয়াত শরীফ নাযিল করেন।</div></div></div>
+
+    <div class="nc sn" data-s="imran" data-k="ইমরান ১০২ আউস খাযরাজ মদীনা ঐক্য ইহুদী বিবাদ"><div class="nc-head" onclick="tog(this)"><div class="nc-num">৯</div><h3>সূরা আল ইমরান — আয়াত ১০২</h3><span class="nc-tog">▼</span></div><div class="nc-body"><span class="sr-ref">সূরা আল ইমরান ﴿١٠٢﴾</span><div class="ar-txt">يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ حَقَّ تُقَاتِهِ وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ</div><div class="bn-txt"><strong>শানে নুযূল:</strong> পবিত্র মদীনা শরীফের আউস ও খাযরাজ গোত্রদ্বয়ের পুরনো শত্রুতা সম্মানিত দীন ইসলামের মাধ্যমে ভ্রাতৃত্বে পরিণত হয়। কিন্তু একজন ইহুদী পুরনো বিবাদের কথা স্মরণ করিয়ে দিয়ে উত্তেজনা সৃষ্টির চেষ্টা করলে নূরে মুজাসসাম হাবীবুল্লাহ হুযূর পাক ছল্লাল্লাহু আলাইহি ওয়া সাল্লাম তিনি উপস্থিত হয়ে তাদের শান্ত ও ঐক্যবদ্ধ করলেন। এর ফলশ্রুতিতে মহান আল্লাহ পাক তিনি এই পবিত্র আয়াত শরীফ নাযিল করেন।</div></div></div>
+
+  </div>
+</div>
+
+<!-- ══════════ তাহকিক ══════════ -->
+<div id="sec-th" class="sec">
+  <div class="q-main">
+    <div class="pdoc-head"><h1>পবিত্র কুরআন শরীফ — তাহকিক</h1><p>এডুকেশন নোটস</p></div>
+    <div style="text-align:center;padding:60px 20px;color:#aaa;">
+      <div style="font-size:3rem;margin-bottom:14px;">🔍</div>
+      <p style="font-size:.95rem;line-height:1.9;">তাহকিক সেকশনটি শীঘ্রই যোগ করা হবে।<br>নতুন কন্টেন্ট পেলে এখানে আপলোড করা হবে। ইনশাআল্লাহ।</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ পরীক্ষার প্রশ্ন ══════════ -->
+<div id="sec-ex" class="sec">
+  <div class="sub-bar"><div class="sub-bar-inner">
+    <button class="sb on" onclick="subTab('ex','all',this)">সব</button>
+    <button class="sb" onclick="subTab('ex','9',this)">নবম শ্রেণী</button>
+    <button class="sb" onclick="subTab('ex','10',this)">দশম শ্রেণী</button>
+    <button class="sb" onclick="subTab('ex','half',this)">অর্ধ-বার্ষিক</button>
+    <button class="sb" onclick="subTab('ex','annual',this)">বার্ষিক</button>
+  </div></div>
+  <div class="q-main">
+    <div style="text-align:center;padding:60px 20px;color:#aaa;">
+      <div style="font-size:3rem;margin-bottom:14px;">📝</div>
+      <p style="font-size:.95rem;line-height:1.9;">নবম ও দশম শ্রেণীর অর্ধ-বার্ষিক এবং বার্ষিক পরীক্ষার প্রশ্ন<br>শীঘ্রই এখানে যোগ করা হবে।<br>আপনি প্রশ্নপত্র দিলে সাথে সাথে যোগ করা হবে। ইনশাআল্লাহ।</p>
+    </div>
+  </div>
+</div>
+
+<!-- প্রিন্ট বাটন -->
+<div class="print-fab">
+  <button class="print-fab-btn" onclick="openModal()">🖨️ প্রিন্ট করুন</button>
+</div>
+
+<!-- প্রিন্ট মডাল -->
+<div class="modal-bg" id="modalBg" onclick="closeBg(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>🖨️ প্রিন্ট অপশন</h3>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p>কোন নোটসগুলো প্রিন্ট করবেন সিলেক্ট করুন, তারপর প্রিন্ট স্টাইল বেছে নিন।</p>
+      <div class="sel-bar">
+        <label class="chk-all-label"><input type="checkbox" id="chkAll" onchange="toggleAll(this)"/> সব সিলেক্ট</label>
+        <span class="sel-badge" id="selBadge">০টি সিলেক্ট হয়নি</span>
+      </div>
+      <div class="pck-list" id="pckList"></div>
+      <div class="pbtn-row">
+        <button class="pbtn pbtn-p" onclick="doPrint('portrait')"><span class="p-ic">📄</span><span><span class="p-main">সাধারণ প্রিন্ট</span><span class="p-sub">পোর্ট্রেট — লম্বালম্বি</span></span></button>
+        <button class="pbtn pbtn-l" onclick="doPrint('landscape')"><span class="p-ic">📰</span><span><span class="p-main">বুকফোল্ড প্রিন্ট</span><span class="p-sub">দুই কলাম — বইয়ের মতো</span></span></button>
+      </div>
+      <p class="modal-tip">💡 বইয়ের মতো এপিঠ-ওপিঠ প্রিন্টের জন্য প্রিন্ট ডায়ালগে <strong>Two-sided / দ্বিপিঠ</strong> চালু রাখুন।</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© ২০২৫ <strong>এডুকেশন নোটস</strong> — সকল অধিকার সংরক্ষিত</p>
+</footer>
+
+<script>
+let activeSec = 'qa';
+const subTabs = { qa:'all', sn:'all', th:'all', ex:'all' };
+
+function showSec(sec, btn) {
+  activeSec = sec;
+  document.querySelectorAll('.sec').forEach(s => s.classList.remove('on'));
+  document.getElementById('sec-' + sec).classList.add('on');
+  document.querySelectorAll('.stab').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+}
+
+function subTab(sec, val, btn) {
+  subTabs[sec] = val;
+  const bar = btn.closest('.sub-bar-inner');
+  bar.querySelectorAll('.sb').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  filter(sec);
+}
+
+function tog(h) {
+  h.nextElementSibling.classList.toggle('op');
+  h.querySelector('.nc-tog').classList.toggle('op');
+}
+
+function filter(sec) {
+  const inp = document.getElementById('srch-' + sec);
+  const q = inp ? inp.value.trim().toLowerCase() : '';
+  const tab = subTabs[sec] || 'all';
+  const cards = document.querySelectorAll('#sec-' + sec + ' .nc');
+  let v = 0;
+  cards.forEach(c => {
+    const s = c.dataset.s || '';
+    const k = (c.dataset.k || '').toLowerCase();
+    const h = c.querySelector('h3').textContent.toLowerCase();
+    const b = c.querySelector('.bn-txt,. a-box,.th-txt') ? (c.querySelector('.bn-txt') || c.querySelector('.a-box') || c.querySelector('.th-txt') || {textContent:''}).textContent.toLowerCase() : '';
+    const tok = tab === 'all' || s === tab;
+    const qok = !q || k.includes(q) || h.includes(q) || b.includes(q);
+    c.style.display = tok && qok ? '' : 'none';
+    if (tok && qok) v++;
+  });
+  const cnt = document.getElementById(sec + '-cnt');
+  const nores = document.getElementById(sec + '-nores');
+  const rcnt = document.querySelector('#sec-' + sec + ' .res-count strong');
+  if (rcnt) rcnt.textContent = toBn(v);
+  if (nores) nores.style.display = v === 0 ? 'block' : 'none';
+}
+
+/* ── প্রিন্ট ── */
+function openModal() {
+  buildPckList();
+  document.getElementById('modalBg').classList.add('on');
+}
+function closeModal() { document.getElementById('modalBg').classList.remove('on'); }
+function closeBg(e) { if (e.target === document.getElementById('modalBg')) closeModal(); }
+
+function buildPckList() {
+  const list = document.getElementById('pckList');
+  list.innerHTML = '';
+  const cards = document.querySelectorAll('#sec-' + activeSec + ' .nc');
+  const secLabel = {qa:'প্রশ্নোত্তর', sn:'শানে নুযূল', th:'তাহকিক', ex:'পরীক্ষার প্রশ্ন'};
+  cards.forEach((c, i) => {
+    c.dataset.pid = 'p' + i;
+    const title = c.querySelector('h3').textContent;
+    const div = document.createElement('div');
+    div.className = 'pck-item';
+    div.innerHTML = `<input type="checkbox" id="pc${i}" onchange="onCheck()"/><div><div class="pck-title">${title}</div><div class="pck-sub">${secLabel[activeSec]}</div></div>`;
+    div.addEventListener('click', e => {
+      if (e.target.tagName !== 'INPUT') {
+        const cb = div.querySelector('input'); cb.checked = !cb.checked;
+        div.classList.toggle('sel', cb.checked); onCheck();
+      } else { div.classList.toggle('sel', div.querySelector('input').checked); onCheck(); }
+    });
+    list.appendChild(div);
+  });
+  onCheck();
+}
+
+function toggleAll(m) {
+  document.querySelectorAll('#pckList input').forEach(cb => { cb.checked = m.checked; cb.closest('.pck-item').classList.toggle('sel', m.checked); });
+  onCheck();
+}
+
+function onCheck() {
+  const total = document.querySelectorAll('#pckList input:checked').length;
+  const all = document.querySelectorAll('#pckList input').length;
+  document.getElementById('selBadge').textContent = total === 0 ? '০টি সিলেক্ট হয়নি' : toBn(total) + 'টি সিলেক্ট';
+  const ca = document.getElementById('chkAll');
+  ca.checked = total > 0 && total === all;
+  ca.indeterminate = total > 0 && total < all;
+}
+
+function doPrint(mode) {
+  const checked = document.querySelectorAll('#pckList input:checked');
+  if (!checked.length) { alert('কমপক্ষে একটি নোটস সিলেক্ট করুন।'); return; }
+  document.querySelectorAll('.nc').forEach(c => {
+    c.classList.remove('fp');
+    const b = c.querySelector('.nc-body'); if (b) b.classList.add('op');
+  });
+  checked.forEach(cb => {
+    const idx = cb.id.replace('pc','');
+    const card = document.querySelector(`[data-pid="p${idx}"]`);
+    if (card) card.classList.add('fp');
+  });
+  document.body.classList.remove('port','land');
+  document.body.classList.add(mode === 'landscape' ? 'land' : 'port');
+  let st = document.getElementById('dynPS');
+  if (!st) { st = document.createElement('style'); st.id = 'dynPS'; document.head.appendChild(st); }
+  st.textContent = mode === 'landscape'
+    ? '@media print{@page{size:A4 landscape;margin:12mm;}}'
+    : '@media print{@page{size:A4 portrait;margin:15mm;}}';
+  closeModal();
+  setTimeout(() => {
+    window.print();
+    setTimeout(() => {
+      document.querySelectorAll('.nc').forEach(c => {
+        c.classList.remove('fp');
+        const b = c.querySelector('.nc-body'); if (b) b.classList.remove('op');
+      });
+      document.body.classList.remove('port','land');
+    }, 1000);
+  }, 300);
+}
+
+function toBn(n) { return n.toString().replace(/[0-9]/g, d => '০১২৩৪৫৬৭৮৯'[d]); }
+
+window.addEventListener('DOMContentLoaded', () => filter('qa'));
+</script>
+</body>
+</html>
